@@ -1,0 +1,26 @@
+- Get the Steamworks SDK from https://partner.steamgames.com
+- Extraxt the content into the Plugins\com.shaderman.steamworks\Sources\Steamworks_SDK folder
+
+Windows 32 bit:
+- Copy steam_api.dll from Plugins\com.shaderman.steamworks\Sources\Steamworks_SDK\redistributable_bin to Plugins\com.shaderman.steamworks\Contents\Windows
+
+Windows 64 bit:
+- To be done
+
+Mac 32 bit:
+- Do not use the "Generate X-code project" option in the editor, this will destroy the correctly configured project file.
+- Copy the com.shaderman.steamworks folder to Mac and open the xcode project in Make\Mac folder
+- Build for 32-bit
+- The result will be a newly built library: Contents\Mac\Steamworks_Mac.dylib
+- In Shiva windows, in the mac section of the plugin, import the plugin binary and select the dylib that was generated.
+- Now you can export the project for Mac
+- If you are testing on the Mac and not through steam, after you build the project in the UAT, you'll need to create a steam_appid.txt in the program [Name].App/Contents/MacOS/ folder
+
+Linux 32 bit:
+* Use the Steamworks.makefile_x86 to build
+  make -f Steamworks.makefile_x86
+* If you are compiling on 64-bit linux, you may need to install necessary packages (see header of makefile).
+
+Linux 64 bit:
+* Use the Steamworks.makefile_x64 to build
+  make -f Steamworks.makefile_x64

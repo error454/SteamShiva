@@ -1,0 +1,75 @@
+#################################################################
+#   ShiVa Extension Plugin Makefile for Linux
+#
+#   Whipped into shape by Zachary Burke
+#
+#   Just a friendly note that if you're compiling this on 64-bit
+#   Ubuntu. You will probably need to install all of the 32-bit junk:
+#   sudo apt-get install libc6-dev:i386
+#   sudo apt-get install g++:i386
+#   sudo apt-get install libstdc++-4.8-dev:i386
+#   sudo apt-get install gcc-multilib
+#   sudo apt-get install build-essential
+#
+#################################################################
+
+TEMP_DIR       		= ../../Temp/Linux
+SRCROOT             = ../../Sources
+S3DXROOT            = ../../Sources/S3DX
+BUILT_PRODUCTS_DIR  = ../../Contents/Linux
+PRODUCT_NAME        = Steamworks_Linux_x86_32.so
+
+
+#################################################################
+SOURCES				= Plugin.cpp Steamworks.cpp SteamMain.cpp StatsAndAchievements.cpp Leaderboards.cpp 
+
+#################################################################
+#  Compiler executables
+#
+CC      			= gcc
+CPP     			= g++
+LD				= $(CPP)
+
+####################################################################"
+#  Compiler flags
+#
+CFLAGS      		= -I../../Sources/Steamworks_SDK/public/steam -m32 -Os -Wno-unknown-pragmas -fsigned-char -fno-exceptions -DS3DX_DLL -D__LINUX__ -D_GNU_SOURCE -DHAVE_STDINT_H -I$(SRCROOT)/Linux -I$(S3DXROOT)
+CPPFLAGS    		= 
+LDFLAGS			= -m32 -L/usr/lib/gcc/i686-linux-gnu/4.8 -L../../Sources/Steamworks_SDK/redistributable_bin/linux32 -lsteam_api
+
+####################################################################"
+#  Objects
+#
+OBJECTS  			= \
+	$(patsubst %.c,%.o,$(filter %.c,$(SOURCES))) \
+	$(patsubst %.cc,%.o,$(filter %.cc,$(SOURCES))) \
+	$(patsubst %.cpp,%.o,$(filter %.cpp,$(SOURCES)))
+
+OBJECTS_ABS			= $(addprefix $(TEMP_DIR)/,$(OBJECTS))
+PRODUCT_ABS         = $(BUILT_PRODUCTS_DIR)/$(PRODUCT_NAME)
+
+####################################################################"
+#  Rules
+#
+
+$(TEMP_DIR)/%.o: $(SRCROOT)/%.c
+	mkdir -p `dirname $@`
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(TEMP_DIR)/%.o: $(SRCROOT)/%.cpp
+	mkdir -p `dirname $@`
+	$(CPP) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+
+####################################################################"
+#  Targets
+#
+all: $(PRODUCT_ABS) 
+
+$(PRODUCT_ABS): $(OBJECTS_ABS)
+	mkdir -p $(BUILT_PRODUCTS_DIR)
+	$(LD) -shared -o $(PRODUCT_ABS) $(OBJECTS_ABS) $(LDFLAGS)
+
+clean:
+	rm -f $(PRODUCT_ABS) $(OBJECTS_ABS)
+
+####################################################################"

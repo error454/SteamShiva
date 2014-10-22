@@ -1,0 +1,1626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43099F9C19169861006B2EB4 /* libsteam_api.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43099ECE19169829006B2EB4 /* libsteam_api.dylib */; settings = {ATTRIBUTES = (Required, ); }; };
+		43574FA4194A726E008EDD5E /* CloudAndWorkshop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 43574FA1194A726E008EDD5E /* CloudAndWorkshop.cpp */; };
+		720E47531251383000BC6A74 /* Plugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 720E474F1251383000BC6A74 /* Plugin.cpp */; };
+		800000010E9AC9E700239362 /* Leaderboards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800010010E9AC9E700239362 /* Leaderboards.cpp */; };
+		800000020E9AC9E700239362 /* StatsAndAchievements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800010030E9AC9E700239362 /* StatsAndAchievements.cpp */; };
+		800000030E9AC9E700239362 /* SteamMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800010050E9AC9E700239362 /* SteamMain.cpp */; };
+		800000040E9AC9E700239362 /* Steamworks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800010070E9AC9E700239362 /* Steamworks.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		43099F991916982A006B2EB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43099E2A19169828006B2EB4 /* Steamworks.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = Steamworks_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		43099E0F191696CD006B2EB4 /* minmax.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minmax.h; sourceTree = "<group>"; };
+		43099E1119169828006B2EB4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		43099E1319169828006B2EB4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		43099E1B19169828006B2EB4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		43099E1C19169828006B2EB4 /* msvcr100.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = msvcr100.dll; sourceTree = "<group>"; };
+		43099E1D19169828006B2EB4 /* steam_api.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = steam_api.dll; sourceTree = "<group>"; };
+		43099E1E19169828006B2EB4 /* Steamworks_Windows.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = Steamworks_Windows.dll; sourceTree = "<group>"; };
+		43099E1F19169828006B2EB4 /* Steamworks_Windows.pdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Steamworks_Windows.pdb; sourceTree = "<group>"; };
+		43099E2219169828006B2EB4 /* BUILD.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = BUILD.txt; sourceTree = "<group>"; };
+		43099E2319169828006B2EB4 /* SDK_version.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = SDK_version.txt; sourceTree = "<group>"; };
+		43099E2519169828006B2EB4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		43099E2A19169828006B2EB4 /* Steamworks.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Steamworks.xcodeproj; sourceTree = "<group>"; };
+		43099E2E19169829006B2EB4 /* Steamworks.makefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Steamworks.makefile; sourceTree = "<group>"; };
+		43099E3019169829006B2EB4 /* minmax.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minmax.h; sourceTree = "<group>"; };
+		43099E3119169829006B2EB4 /* Steamworks.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Steamworks.xcodeproj; sourceTree = "<group>"; };
+		43099E3919169829006B2EB4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		43099E3C19169829006B2EB4 /* steamworks_windows-a514b36f.ipch */ = {isa = PBXFileReference; lastKnownFileType = file; path = "steamworks_windows-a514b36f.ipch"; sourceTree = "<group>"; };
+		43099E3D19169829006B2EB4 /* Steamworks.sdf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Steamworks.sdf; sourceTree = "<group>"; };
+		43099E3E19169829006B2EB4 /* Steamworks.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = Steamworks.sln; sourceTree = "<group>"; };
+		43099E3F19169829006B2EB4 /* Steamworks.suo */ = {isa = PBXFileReference; lastKnownFileType = file; path = Steamworks.suo; sourceTree = "<group>"; };
+		43099E4019169829006B2EB4 /* Steamworks.vcxproj */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Steamworks.vcxproj; sourceTree = "<group>"; };
+		43099E4119169829006B2EB4 /* Steamworks.vcxproj.filters */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Steamworks.vcxproj.filters; sourceTree = "<group>"; };
+		43099E4219169829006B2EB4 /* Steamworks.vcxproj.user */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Steamworks.vcxproj.user; sourceTree = "<group>"; };
+		43099E4419169829006B2EB4 /* Steamworks.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = Steamworks.sln; sourceTree = "<group>"; };
+		43099E4519169829006B2EB4 /* Steamworks.vcxproj */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Steamworks.vcxproj; sourceTree = "<group>"; };
+		43099E4619169829006B2EB4 /* Steamworks.vcxproj.filters */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Steamworks.vcxproj.filters; sourceTree = "<group>"; };
+		43099E4819169829006B2EB4 /* Manifest.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Manifest.xml; sourceTree = "<group>"; };
+		43099E4A19169829006B2EB4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		43099E4C19169829006B2EB4 /* PrecompiledHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrecompiledHeader.h; sourceTree = "<group>"; };
+		43099E4E19169829006B2EB4 /* PrecompiledHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrecompiledHeader.h; sourceTree = "<group>"; };
+		43099E5019169829006B2EB4 /* PrecompiledHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrecompiledHeader.h; sourceTree = "<group>"; };
+		43099E5119169829006B2EB4 /* Leaderboards.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Leaderboards.cpp; sourceTree = "<group>"; };
+		43099E5219169829006B2EB4 /* Leaderboards.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Leaderboards.h; sourceTree = "<group>"; };
+		43099E5419169829006B2EB4 /* PrecompiledHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrecompiledHeader.h; sourceTree = "<group>"; };
+		43099E5619169829006B2EB4 /* PrecompiledHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrecompiledHeader.h; sourceTree = "<group>"; };
+		43099E5819169829006B2EB4 /* PrecompiledHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrecompiledHeader.h; sourceTree = "<group>"; };
+		43099E5A19169829006B2EB4 /* PrecompiledHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrecompiledHeader.h; sourceTree = "<group>"; };
+		43099E5B19169829006B2EB4 /* Plugin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Plugin.cpp; sourceTree = "<group>"; };
+		43099E5C19169829006B2EB4 /* Plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plugin.h; sourceTree = "<group>"; };
+		43099E5E19169829006B2EB4 /* PrecompiledHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrecompiledHeader.h; sourceTree = "<group>"; };
+		43099E6019169829006B2EB4 /* S3DXAIConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S3DXAIConstant.h; sourceTree = "<group>"; };
+		43099E6119169829006B2EB4 /* S3DXAIEngineAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S3DXAIEngineAPI.h; sourceTree = "<group>"; };
+		43099E6219169829006B2EB4 /* S3DXAIFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S3DXAIFunction.h; sourceTree = "<group>"; };
+		43099E6319169829006B2EB4 /* S3DXAIModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S3DXAIModel.h; sourceTree = "<group>"; };
+		43099E6419169829006B2EB4 /* S3DXAIPackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S3DXAIPackage.h; sourceTree = "<group>"; };
+		43099E6519169829006B2EB4 /* S3DXAIVariable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S3DXAIVariable.h; sourceTree = "<group>"; };
+		43099E6619169829006B2EB4 /* S3DXAIVariables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S3DXAIVariables.h; sourceTree = "<group>"; };
+		43099E6719169829006B2EB4 /* S3DXAndroidTools.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; path = S3DXAndroidTools.jar; sourceTree = "<group>"; };
+		43099E6819169829006B2EB4 /* S3DXAudioBackend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S3DXAudioBackend.h; sourceTree = "<group>"; };
+		43099E6919169829006B2EB4 /* S3DXConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S3DXConfig.h; sourceTree = "<group>"; };
+		43099E6A19169829006B2EB4 /* S3DXMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S3DXMacros.h; sourceTree = "<group>"; };
+		43099E6B19169829006B2EB4 /* S3DXPlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S3DXPlatform.h; sourceTree = "<group>"; };
+		43099E6C19169829006B2EB4 /* S3DXPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S3DXPlugin.h; sourceTree = "<group>"; };
+		43099E6D19169829006B2EB4 /* S3DXTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S3DXTypes.h; sourceTree = "<group>"; };
+		43099E6E19169829006B2EB4 /* StatsAndAchievements.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StatsAndAchievements.cpp; sourceTree = "<group>"; };
+		43099E6F19169829006B2EB4 /* StatsAndAchievements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatsAndAchievements.h; sourceTree = "<group>"; };
+		43099E7019169829006B2EB4 /* SteamMain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SteamMain.cpp; sourceTree = "<group>"; };
+		43099E7119169829006B2EB4 /* SteamMain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SteamMain.h; sourceTree = "<group>"; };
+		43099E7219169829006B2EB4 /* Steamworks.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Steamworks.cpp; sourceTree = "<group>"; };
+		43099E7319169829006B2EB4 /* Steamworks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Steamworks.h; sourceTree = "<group>"; };
+		43099E7619169829006B2EB4 /* steam.cfg */ = {isa = PBXFileReference; lastKnownFileType = text; path = steam.cfg; sourceTree = "<group>"; };
+		43099E7719169829006B2EB4 /* steam.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = steam.exe; sourceTree = "<group>"; };
+		43099E7919169829006B2EB4 /* cglmbuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cglmbuffer.cpp; sourceTree = "<group>"; };
+		43099E7A19169829006B2EB4 /* cglmbuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cglmbuffer.h; sourceTree = "<group>"; };
+		43099E7B19169829006B2EB4 /* cglmfbo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cglmfbo.cpp; sourceTree = "<group>"; };
+		43099E7C19169829006B2EB4 /* cglmfbo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cglmfbo.h; sourceTree = "<group>"; };
+		43099E7D19169829006B2EB4 /* cglmprogram.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cglmprogram.cpp; sourceTree = "<group>"; };
+		43099E7E19169829006B2EB4 /* cglmprogram.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cglmprogram.h; sourceTree = "<group>"; };
+		43099E7F19169829006B2EB4 /* cglmquery.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cglmquery.cpp; sourceTree = "<group>"; };
+		43099E8019169829006B2EB4 /* cglmquery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cglmquery.h; sourceTree = "<group>"; };
+		43099E8119169829006B2EB4 /* cglmtex.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cglmtex.cpp; sourceTree = "<group>"; };
+		43099E8219169829006B2EB4 /* cglmtex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cglmtex.h; sourceTree = "<group>"; };
+		43099E8319169829006B2EB4 /* dx9asmtogl2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dx9asmtogl2.cpp; sourceTree = "<group>"; };
+		43099E8419169829006B2EB4 /* dx9asmtogl2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dx9asmtogl2.h; sourceTree = "<group>"; };
+		43099E8519169829006B2EB4 /* dxabstract.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dxabstract.cpp; sourceTree = "<group>"; };
+		43099E8619169829006B2EB4 /* dxabstract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dxabstract.h; sourceTree = "<group>"; };
+		43099E8719169829006B2EB4 /* glmdebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glmdebug.h; sourceTree = "<group>"; };
+		43099E8819169829006B2EB4 /* glmdisplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glmdisplay.h; sourceTree = "<group>"; };
+		43099E8919169829006B2EB4 /* glmgr.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = glmgr.cpp; sourceTree = "<group>"; };
+		43099E8A19169829006B2EB4 /* glmgr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glmgr.h; sourceTree = "<group>"; };
+		43099E8B19169829006B2EB4 /* glmgrbasics.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = glmgrbasics.cpp; sourceTree = "<group>"; };
+		43099E8C19169829006B2EB4 /* glmgrbasics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glmgrbasics.h; sourceTree = "<group>"; };
+		43099E8D19169829006B2EB4 /* glmgrcocoa.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = glmgrcocoa.mm; sourceTree = "<group>"; };
+		43099E8E19169829006B2EB4 /* glmgrext.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = glmgrext.cpp; sourceTree = "<group>"; };
+		43099E8F19169829006B2EB4 /* glmgrext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glmgrext.h; sourceTree = "<group>"; };
+		43099E9019169829006B2EB4 /* imageformat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imageformat.h; sourceTree = "<group>"; };
+		43099E9119169829006B2EB4 /* mathlite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mathlite.cpp; sourceTree = "<group>"; };
+		43099E9219169829006B2EB4 /* mathlite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mathlite.h; sourceTree = "<group>"; };
+		43099E9319169829006B2EB4 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		43099E9619169829006B2EB4 /* isteamapps.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamapps.h; sourceTree = "<group>"; };
+		43099E9719169829006B2EB4 /* isteamappticket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamappticket.h; sourceTree = "<group>"; };
+		43099E9819169829006B2EB4 /* isteamclient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamclient.h; sourceTree = "<group>"; };
+		43099E9919169829006B2EB4 /* isteamcontroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamcontroller.h; sourceTree = "<group>"; };
+		43099E9A19169829006B2EB4 /* isteamfriends.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamfriends.h; sourceTree = "<group>"; };
+		43099E9B19169829006B2EB4 /* isteamgamecoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamgamecoordinator.h; sourceTree = "<group>"; };
+		43099E9C19169829006B2EB4 /* isteamgameserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamgameserver.h; sourceTree = "<group>"; };
+		43099E9D19169829006B2EB4 /* isteamgameserverstats.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamgameserverstats.h; sourceTree = "<group>"; };
+		43099E9E19169829006B2EB4 /* isteamhttp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamhttp.h; sourceTree = "<group>"; };
+		43099E9F19169829006B2EB4 /* isteammasterserverupdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteammasterserverupdater.h; sourceTree = "<group>"; };
+		43099EA019169829006B2EB4 /* isteammatchmaking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteammatchmaking.h; sourceTree = "<group>"; };
+		43099EA119169829006B2EB4 /* isteamnetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamnetworking.h; sourceTree = "<group>"; };
+		43099EA219169829006B2EB4 /* isteamps3overlayrenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamps3overlayrenderer.h; sourceTree = "<group>"; };
+		43099EA319169829006B2EB4 /* isteamremotestorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamremotestorage.h; sourceTree = "<group>"; };
+		43099EA419169829006B2EB4 /* isteamscreenshots.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamscreenshots.h; sourceTree = "<group>"; };
+		43099EA519169829006B2EB4 /* isteamugc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamugc.h; sourceTree = "<group>"; };
+		43099EA619169829006B2EB4 /* isteamunifiedmessages.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamunifiedmessages.h; sourceTree = "<group>"; };
+		43099EA719169829006B2EB4 /* isteamuser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamuser.h; sourceTree = "<group>"; };
+		43099EA819169829006B2EB4 /* isteamuserstats.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamuserstats.h; sourceTree = "<group>"; };
+		43099EA919169829006B2EB4 /* isteamutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = isteamutils.h; sourceTree = "<group>"; };
+		43099EAC19169829006B2EB4 /* libsdkencryptedappticket.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = libsdkencryptedappticket.so; sourceTree = "<group>"; };
+		43099EAE19169829006B2EB4 /* libsdkencryptedappticket.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = libsdkencryptedappticket.so; sourceTree = "<group>"; };
+		43099EB019169829006B2EB4 /* libsdkencryptedappticket.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libsdkencryptedappticket.dylib; sourceTree = "<group>"; };
+		43099EB219169829006B2EB4 /* sdkencryptedappticket.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = sdkencryptedappticket.dll; sourceTree = "<group>"; };
+		43099EB319169829006B2EB4 /* sdkencryptedappticket.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = sdkencryptedappticket.lib; sourceTree = "<group>"; };
+		43099EB519169829006B2EB4 /* sdkencryptedappticket64.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = sdkencryptedappticket64.dll; sourceTree = "<group>"; };
+		43099EB619169829006B2EB4 /* sdkencryptedappticket64.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = sdkencryptedappticket64.lib; sourceTree = "<group>"; };
+		43099EB719169829006B2EB4 /* matchmakingtypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = matchmakingtypes.h; sourceTree = "<group>"; };
+		43099EB819169829006B2EB4 /* steam_api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = steam_api.h; sourceTree = "<group>"; };
+		43099EB919169829006B2EB4 /* steam_gameserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = steam_gameserver.h; sourceTree = "<group>"; };
+		43099EBA19169829006B2EB4 /* steamclientpublic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = steamclientpublic.h; sourceTree = "<group>"; };
+		43099EBB19169829006B2EB4 /* steamcontrollerpublic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = steamcontrollerpublic.h; sourceTree = "<group>"; };
+		43099EBC19169829006B2EB4 /* steamencryptedappticket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = steamencryptedappticket.h; sourceTree = "<group>"; };
+		43099EBD19169829006B2EB4 /* steamhttpenums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = steamhttpenums.h; sourceTree = "<group>"; };
+		43099EBE19169829006B2EB4 /* steamps3params.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = steamps3params.h; sourceTree = "<group>"; };
+		43099EBF19169829006B2EB4 /* steamtypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = steamtypes.h; sourceTree = "<group>"; };
+		43099EC019169829006B2EB4 /* steamuniverse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = steamuniverse.h; sourceTree = "<group>"; };
+		43099EC119169829006B2EB4 /* steamvr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = steamvr.h; sourceTree = "<group>"; };
+		43099EC219169829006B2EB4 /* Readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
+		43099EC519169829006B2EB4 /* libsteam.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = libsteam.so; sourceTree = "<group>"; };
+		43099EC619169829006B2EB4 /* libsteam_api.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = libsteam_api.so; sourceTree = "<group>"; };
+		43099EC719169829006B2EB4 /* libtier0_s.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = libtier0_s.so; sourceTree = "<group>"; };
+		43099EC819169829006B2EB4 /* libvstdlib_s.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = libvstdlib_s.so; sourceTree = "<group>"; };
+		43099EC919169829006B2EB4 /* steamclient.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = steamclient.so; sourceTree = "<group>"; };
+		43099ECB19169829006B2EB4 /* libsteam_api.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = libsteam_api.so; sourceTree = "<group>"; };
+		43099ECD19169829006B2EB4 /* libsteam.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libsteam.dylib; sourceTree = "<group>"; };
+		43099ECE19169829006B2EB4 /* libsteam_api.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libsteam_api.dylib; sourceTree = "<group>"; };
+		43099ECF19169829006B2EB4 /* libtier0_s.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libtier0_s.dylib; sourceTree = "<group>"; };
+		43099ED019169829006B2EB4 /* libvstdlib_s.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libvstdlib_s.dylib; sourceTree = "<group>"; };
+		43099ED119169829006B2EB4 /* steamclient.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = steamclient.dylib; sourceTree = "<group>"; };
+		43099ED219169829006B2EB4 /* Steam.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = Steam.dll; sourceTree = "<group>"; };
+		43099ED319169829006B2EB4 /* steam_api.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = steam_api.dll; sourceTree = "<group>"; };
+		43099ED419169829006B2EB4 /* steam_api.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = steam_api.lib; sourceTree = "<group>"; };
+		43099ED519169829006B2EB4 /* steamclient.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = steamclient.dll; sourceTree = "<group>"; };
+		43099ED619169829006B2EB4 /* tier0_s.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = tier0_s.dll; sourceTree = "<group>"; };
+		43099ED719169829006B2EB4 /* vstdlib_s.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = vstdlib_s.dll; sourceTree = "<group>"; };
+		43099ED919169829006B2EB4 /* steam_api64.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = steam_api64.dll; sourceTree = "<group>"; };
+		43099EDA19169829006B2EB4 /* steam_api64.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = steam_api64.lib; sourceTree = "<group>"; };
+		43099EDE19169829006B2EB4 /* steamcmd.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = steamcmd.exe; sourceTree = "<group>"; };
+		43099EE019169829006B2EB4 /* your game content lives here.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "your game content lives here.txt"; sourceTree = "<group>"; };
+		43099EE219169829006B2EB4 /* for build logs and intermediate files.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "for build logs and intermediate files.txt"; sourceTree = "<group>"; };
+		43099EE319169829006B2EB4 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		43099EE419169829006B2EB4 /* run_build.bat */ = {isa = PBXFileReference; lastKnownFileType = text; path = run_build.bat; sourceTree = "<group>"; };
+		43099EE619169829006B2EB4 /* app_build_1000.vdf */ = {isa = PBXFileReference; lastKnownFileType = text; path = app_build_1000.vdf; sourceTree = "<group>"; };
+		43099EE719169829006B2EB4 /* depot_build_1001.vdf */ = {isa = PBXFileReference; lastKnownFileType = text; path = depot_build_1001.vdf; sourceTree = "<group>"; };
+		43099EE819169829006B2EB4 /* ContentPrep.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = ContentPrep.zip; sourceTree = "<group>"; };
+		43099EEB19169829006B2EB4 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		43099EEC19169829006B2EB4 /* mongoose-3.1.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mongoose-3.1.exe"; sourceTree = "<group>"; };
+		43099EED19169829006B2EB4 /* mongoose-license.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "mongoose-license.txt"; sourceTree = "<group>"; };
+		43099EEE19169829006B2EB4 /* mongoose.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = mongoose.conf; sourceTree = "<group>"; };
+		43099EF019169829006B2EB4 /* drmtool.cfg */ = {isa = PBXFileReference; lastKnownFileType = text; path = drmtool.cfg; sourceTree = "<group>"; };
+		43099EF119169829006B2EB4 /* drmtool.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = drmtool.exe; sourceTree = "<group>"; };
+		43099EF219169829006B2EB4 /* drmtoolp.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = drmtoolp.exe; sourceTree = "<group>"; };
+		43099EF319169829006B2EB4 /* Readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
+		43099EF519169829006B2EB4 /* drmtoolp */ = {isa = PBXFileReference; lastKnownFileType = file; path = drmtoolp; sourceTree = "<group>"; };
+		43099EF619169829006B2EB4 /* drmunpackp.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = drmunpackp.so; sourceTree = "<group>"; };
+		43099EF719169829006B2EB4 /* steamdrmp.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = steamdrmp.so; sourceTree = "<group>"; };
+		43099EF919169829006B2EB4 /* drmtoolp */ = {isa = PBXFileReference; lastKnownFileType = file; path = drmtoolp; sourceTree = "<group>"; };
+		43099EFA19169829006B2EB4 /* drmunpackp.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = drmunpackp.so; sourceTree = "<group>"; };
+		43099EFB19169829006B2EB4 /* steamdrmp.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = steamdrmp.so; sourceTree = "<group>"; };
+		43099EFE19169829006B2EB4 /* autorun.inf */ = {isa = PBXFileReference; lastKnownFileType = text; path = autorun.inf; sourceTree = "<group>"; };
+		43099EFF19169829006B2EB4 /* icon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = icon.ico; sourceTree = "<group>"; };
+		43099F0119169829006B2EB4 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
+		43099F0219169829006B2EB4 /* eula.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = eula.rtf; sourceTree = "<group>"; };
+		43099F0319169829006B2EB4 /* hover.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hover.wav; sourceTree = "<group>"; };
+		43099F0419169829006B2EB4 /* installscript.vdf */ = {isa = PBXFileReference; lastKnownFileType = text; path = installscript.vdf; sourceTree = "<group>"; };
+		43099F0519169829006B2EB4 /* launch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = launch.wav; sourceTree = "<group>"; };
+		43099F0619169829006B2EB4 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		43099F0819169829006B2EB4 /* vcredist_x86.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = vcredist_x86.exe; sourceTree = "<group>"; };
+		43099F0919169829006B2EB4 /* setup.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = setup.bmp; sourceTree = "<group>"; };
+		43099F0A19169829006B2EB4 /* setup_arabic.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_arabic.ini; sourceTree = "<group>"; };
+		43099F0B19169829006B2EB4 /* setup_czech.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_czech.ini; sourceTree = "<group>"; };
+		43099F0C19169829006B2EB4 /* setup_danish.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_danish.ini; sourceTree = "<group>"; };
+		43099F0D19169829006B2EB4 /* setup_dutch.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_dutch.ini; sourceTree = "<group>"; };
+		43099F0E19169829006B2EB4 /* setup_english.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_english.ini; sourceTree = "<group>"; };
+		43099F0F19169829006B2EB4 /* setup_finnish.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_finnish.ini; sourceTree = "<group>"; };
+		43099F1019169829006B2EB4 /* setup_french.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_french.ini; sourceTree = "<group>"; };
+		43099F1119169829006B2EB4 /* setup_german.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_german.ini; sourceTree = "<group>"; };
+		43099F1219169829006B2EB4 /* setup_hungarian.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_hungarian.ini; sourceTree = "<group>"; };
+		43099F1319169829006B2EB4 /* setup_italian.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_italian.ini; sourceTree = "<group>"; };
+		43099F1419169829006B2EB4 /* setup_japanese.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_japanese.ini; sourceTree = "<group>"; };
+		43099F1519169829006B2EB4 /* setup_korean.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_korean.ini; sourceTree = "<group>"; };
+		43099F1619169829006B2EB4 /* setup_norwegian.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_norwegian.ini; sourceTree = "<group>"; };
+		43099F1719169829006B2EB4 /* setup_polish.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_polish.ini; sourceTree = "<group>"; };
+		43099F1819169829006B2EB4 /* setup_portuguese.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_portuguese.ini; sourceTree = "<group>"; };
+		43099F1919169829006B2EB4 /* setup_russian.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_russian.ini; sourceTree = "<group>"; };
+		43099F1A19169829006B2EB4 /* setup_schinese.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_schinese.ini; sourceTree = "<group>"; };
+		43099F1B19169829006B2EB4 /* setup_spanish.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_spanish.ini; sourceTree = "<group>"; };
+		43099F1C19169829006B2EB4 /* setup_swedish.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_swedish.ini; sourceTree = "<group>"; };
+		43099F1D19169829006B2EB4 /* setup_tchinese.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_tchinese.ini; sourceTree = "<group>"; };
+		43099F1E19169829006B2EB4 /* setup_thai.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup_thai.ini; sourceTree = "<group>"; };
+		43099F1F19169829006B2EB4 /* SteamInstall_English.msi */ = {isa = PBXFileReference; lastKnownFileType = file; path = SteamInstall_English.msi; sourceTree = "<group>"; };
+		43099F2019169829006B2EB4 /* Setup.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = Setup.exe; sourceTree = "<group>"; };
+		43099F2119169829006B2EB4 /* setup.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = setup.ini; sourceTree = "<group>"; };
+		43099F2219169829006B2EB4 /* splash.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = splash.tga; sourceTree = "<group>"; };
+		43099F2319169829006B2EB4 /* SteamRetailInstaller.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = SteamRetailInstaller.dmg; sourceTree = "<group>"; };
+		43099F2419169829006B2EB4 /* SteamService.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = SteamService.exe; sourceTree = "<group>"; };
+		43099F2519169829006B2EB4 /* SteamworksExample_disk1.sim */ = {isa = PBXFileReference; lastKnownFileType = file; path = SteamworksExample_disk1.sim; sourceTree = "<group>"; };
+		43099F2619169829006B2EB4 /* SteamworksExample_disk1.sis */ = {isa = PBXFileReference; lastKnownFileType = text; path = SteamworksExample_disk1.sis; sourceTree = "<group>"; };
+		43099F2719169829006B2EB4 /* SteamworksExample_disk1_0.sid */ = {isa = PBXFileReference; lastKnownFileType = file; path = SteamworksExample_disk1_0.sid; sourceTree = "<group>"; };
+		43099F2819169829006B2EB4 /* project_example.bat */ = {isa = PBXFileReference; lastKnownFileType = text; path = project_example.bat; sourceTree = "<group>"; };
+		43099F2919169829006B2EB4 /* sku_project_example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = sku_project_example.txt; sourceTree = "<group>"; };
+		43099F2B19169829006B2EB4 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		43099F2C19169829006B2EB4 /* setup.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = setup.sh; sourceTree = "<group>"; };
+		43099F2E19169829006B2EB4 /* PrecompiledHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrecompiledHeader.h; sourceTree = "<group>"; };
+		43099F3019169829006B2EB4 /* DLLMain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DLLMain.cpp; sourceTree = "<group>"; };
+		43099F3119169829006B2EB4 /* PrecompiledHeader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PrecompiledHeader.cpp; sourceTree = "<group>"; };
+		43099F3219169829006B2EB4 /* PrecompiledHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrecompiledHeader.h; sourceTree = "<group>"; };
+		43099F3419169829006B2EB4 /* PrecompiledHeader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PrecompiledHeader.cpp; sourceTree = "<group>"; };
+		43099F3519169829006B2EB4 /* PrecompiledHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrecompiledHeader.h; sourceTree = "<group>"; };
+		43099F3719169829006B2EB4 /* PrecompiledHeader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PrecompiledHeader.cpp; sourceTree = "<group>"; };
+		43099F3819169829006B2EB4 /* PrecompiledHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrecompiledHeader.h; sourceTree = "<group>"; };
+		43099F3E19169829006B2EB4 /* build-state.dat */ = {isa = PBXFileReference; lastKnownFileType = text; path = "build-state.dat"; sourceTree = "<group>"; };
+		43099F4119169829006B2EB4 /* StatsAndAchievements.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = StatsAndAchievements.d; sourceTree = "<group>"; };
+		43099F4219169829006B2EB4 /* StatsAndAchievements.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = StatsAndAchievements.dia; sourceTree = "<group>"; };
+		43099F4319169829006B2EB4 /* StatsAndAchievements.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = StatsAndAchievements.o; sourceTree = "<group>"; };
+		43099F4419169829006B2EB4 /* SteamMain.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = SteamMain.d; sourceTree = "<group>"; };
+		43099F4519169829006B2EB4 /* SteamMain.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = SteamMain.dia; sourceTree = "<group>"; };
+		43099F4619169829006B2EB4 /* SteamMain.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = SteamMain.o; sourceTree = "<group>"; };
+		43099F4719169829006B2EB4 /* Steamworks.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = Steamworks.d; sourceTree = "<group>"; };
+		43099F4819169829006B2EB4 /* Steamworks.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = Steamworks.dia; sourceTree = "<group>"; };
+		43099F4919169829006B2EB4 /* Steamworks.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = Steamworks.o; sourceTree = "<group>"; };
+		43099F4A1916982A006B2EB4 /* Steamworks_Mac.LinkFileList */ = {isa = PBXFileReference; lastKnownFileType = text; path = Steamworks_Mac.LinkFileList; sourceTree = "<group>"; };
+		43099F4C1916982A006B2EB4 /* Leaderboards.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = Leaderboards.d; sourceTree = "<group>"; };
+		43099F4D1916982A006B2EB4 /* Leaderboards.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = Leaderboards.dia; sourceTree = "<group>"; };
+		43099F4E1916982A006B2EB4 /* Leaderboards.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = Leaderboards.o; sourceTree = "<group>"; };
+		43099F4F1916982A006B2EB4 /* Plugin.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = Plugin.d; sourceTree = "<group>"; };
+		43099F501916982A006B2EB4 /* Plugin.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = Plugin.dia; sourceTree = "<group>"; };
+		43099F511916982A006B2EB4 /* Plugin.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = Plugin.o; sourceTree = "<group>"; };
+		43099F521916982A006B2EB4 /* StatsAndAchievements.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = StatsAndAchievements.d; sourceTree = "<group>"; };
+		43099F531916982A006B2EB4 /* StatsAndAchievements.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = StatsAndAchievements.dia; sourceTree = "<group>"; };
+		43099F541916982A006B2EB4 /* StatsAndAchievements.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = StatsAndAchievements.o; sourceTree = "<group>"; };
+		43099F551916982A006B2EB4 /* SteamMain.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = SteamMain.d; sourceTree = "<group>"; };
+		43099F561916982A006B2EB4 /* SteamMain.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = SteamMain.dia; sourceTree = "<group>"; };
+		43099F571916982A006B2EB4 /* SteamMain.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = SteamMain.o; sourceTree = "<group>"; };
+		43099F581916982A006B2EB4 /* Steamworks.d */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.dtrace; path = Steamworks.d; sourceTree = "<group>"; };
+		43099F591916982A006B2EB4 /* Steamworks.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = Steamworks.dia; sourceTree = "<group>"; };
+		43099F5A1916982A006B2EB4 /* Steamworks.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = Steamworks.o; sourceTree = "<group>"; };
+		43099F5B1916982A006B2EB4 /* Steamworks_Mac.LinkFileList */ = {isa = PBXFileReference; lastKnownFileType = text; path = Steamworks_Mac.LinkFileList; sourceTree = "<group>"; };
+		43099F5C1916982A006B2EB4 /* Steamworks.dep */ = {isa = PBXFileReference; lastKnownFileType = text; path = Steamworks.dep; sourceTree = "<group>"; };
+		43099F5D1916982A006B2EB4 /* Steamworks_Mac-all-target-headers.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Steamworks_Mac-all-target-headers.hmap"; sourceTree = "<group>"; };
+		43099F5E1916982A006B2EB4 /* Steamworks_Mac-generated-files.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Steamworks_Mac-generated-files.hmap"; sourceTree = "<group>"; };
+		43099F5F1916982A006B2EB4 /* Steamworks_Mac-own-target-headers.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Steamworks_Mac-own-target-headers.hmap"; sourceTree = "<group>"; };
+		43099F601916982A006B2EB4 /* Steamworks_Mac-project-headers.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Steamworks_Mac-project-headers.hmap"; sourceTree = "<group>"; };
+		43099F611916982A006B2EB4 /* Steamworks_Mac.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = Steamworks_Mac.hmap; sourceTree = "<group>"; };
+		43099F641916982A006B2EB4 /* cl.command.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = cl.command.1.tlog; sourceTree = "<group>"; };
+		43099F651916982A006B2EB4 /* CL.read.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = CL.read.1.tlog; sourceTree = "<group>"; };
+		43099F661916982A006B2EB4 /* CL.write.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = CL.write.1.tlog; sourceTree = "<group>"; };
+		43099F671916982A006B2EB4 /* DLLMain.obj */ = {isa = PBXFileReference; lastKnownFileType = file; path = DLLMain.obj; sourceTree = "<group>"; };
+		43099F681916982A006B2EB4 /* Leaderboards.obj */ = {isa = PBXFileReference; lastKnownFileType = file; path = Leaderboards.obj; sourceTree = "<group>"; };
+		43099F691916982A006B2EB4 /* link.command.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = link.command.1.tlog; sourceTree = "<group>"; };
+		43099F6A1916982A006B2EB4 /* link.read.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = link.read.1.tlog; sourceTree = "<group>"; };
+		43099F6B1916982A006B2EB4 /* link.write.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = link.write.1.tlog; sourceTree = "<group>"; };
+		43099F6C1916982A006B2EB4 /* mt.command.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = mt.command.1.tlog; sourceTree = "<group>"; };
+		43099F6D1916982A006B2EB4 /* mt.read.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = mt.read.1.tlog; sourceTree = "<group>"; };
+		43099F6E1916982A006B2EB4 /* mt.write.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = mt.write.1.tlog; sourceTree = "<group>"; };
+		43099F6F1916982A006B2EB4 /* Plugin.obj */ = {isa = PBXFileReference; lastKnownFileType = file; path = Plugin.obj; sourceTree = "<group>"; };
+		43099F701916982A006B2EB4 /* PrecompiledHeader.obj */ = {isa = PBXFileReference; lastKnownFileType = file; path = PrecompiledHeader.obj; sourceTree = "<group>"; };
+		43099F711916982A006B2EB4 /* StatsAndAchievements.obj */ = {isa = PBXFileReference; lastKnownFileType = file; path = StatsAndAchievements.obj; sourceTree = "<group>"; };
+		43099F721916982A006B2EB4 /* SteamMain.obj */ = {isa = PBXFileReference; lastKnownFileType = file; path = SteamMain.obj; sourceTree = "<group>"; };
+		43099F731916982A006B2EB4 /* Steamworks.lastbuildstate */ = {isa = PBXFileReference; lastKnownFileType = text; path = Steamworks.lastbuildstate; sourceTree = "<group>"; };
+		43099F741916982A006B2EB4 /* Steamworks.log */ = {isa = PBXFileReference; lastKnownFileType = text; path = Steamworks.log; sourceTree = "<group>"; };
+		43099F751916982A006B2EB4 /* Steamworks.obj */ = {isa = PBXFileReference; lastKnownFileType = file; path = Steamworks.obj; sourceTree = "<group>"; };
+		43099F761916982A006B2EB4 /* Steamworks.vcxprojResolveAssemblyReference.cache */ = {isa = PBXFileReference; lastKnownFileType = file; path = Steamworks.vcxprojResolveAssemblyReference.cache; sourceTree = "<group>"; };
+		43099F771916982A006B2EB4 /* Steamworks.write.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = Steamworks.write.1.tlog; sourceTree = "<group>"; };
+		43099F781916982A006B2EB4 /* Steamworks_Windows.dll.intermediate.manifest */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Steamworks_Windows.dll.intermediate.manifest; sourceTree = "<group>"; };
+		43099F791916982A006B2EB4 /* Steamworks_Windows.exp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.exports; path = Steamworks_Windows.exp; sourceTree = "<group>"; };
+		43099F7A1916982A006B2EB4 /* Steamworks_Windows.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = Steamworks_Windows.lib; sourceTree = "<group>"; };
+		43099F7B1916982A006B2EB4 /* Steamworks_Windows.manifest */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Steamworks_Windows.manifest; sourceTree = "<group>"; };
+		43099F7C1916982A006B2EB4 /* Steamworks_Windows.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Steamworks_Windows.pch; sourceTree = "<group>"; };
+		43099F7D1916982A006B2EB4 /* Steamworks_Windows.pdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Steamworks_Windows.pdb; sourceTree = "<group>"; };
+		43099F7E1916982A006B2EB4 /* vc100.pdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = vc100.pdb; sourceTree = "<group>"; };
+		43099F801916982A006B2EB4 /* cl.command.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = cl.command.1.tlog; sourceTree = "<group>"; };
+		43099F811916982A006B2EB4 /* CL.read.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = CL.read.1.tlog; sourceTree = "<group>"; };
+		43099F821916982A006B2EB4 /* CL.write.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = CL.write.1.tlog; sourceTree = "<group>"; };
+		43099F831916982A006B2EB4 /* DLLMain.obj */ = {isa = PBXFileReference; lastKnownFileType = file; path = DLLMain.obj; sourceTree = "<group>"; };
+		43099F841916982A006B2EB4 /* link.command.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = link.command.1.tlog; sourceTree = "<group>"; };
+		43099F851916982A006B2EB4 /* link.read.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = link.read.1.tlog; sourceTree = "<group>"; };
+		43099F861916982A006B2EB4 /* link.write.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = link.write.1.tlog; sourceTree = "<group>"; };
+		43099F871916982A006B2EB4 /* mt.command.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = mt.command.1.tlog; sourceTree = "<group>"; };
+		43099F881916982A006B2EB4 /* mt.read.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = mt.read.1.tlog; sourceTree = "<group>"; };
+		43099F891916982A006B2EB4 /* mt.write.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = mt.write.1.tlog; sourceTree = "<group>"; };
+		43099F8A1916982A006B2EB4 /* Plugin.obj */ = {isa = PBXFileReference; lastKnownFileType = file; path = Plugin.obj; sourceTree = "<group>"; };
+		43099F8B1916982A006B2EB4 /* PrecompiledHeader.obj */ = {isa = PBXFileReference; lastKnownFileType = file; path = PrecompiledHeader.obj; sourceTree = "<group>"; };
+		43099F8C1916982A006B2EB4 /* StatsAndAchievements.obj */ = {isa = PBXFileReference; lastKnownFileType = file; path = StatsAndAchievements.obj; sourceTree = "<group>"; };
+		43099F8D1916982A006B2EB4 /* SteamMain.obj */ = {isa = PBXFileReference; lastKnownFileType = file; path = SteamMain.obj; sourceTree = "<group>"; };
+		43099F8E1916982A006B2EB4 /* Steamworks.lastbuildstate */ = {isa = PBXFileReference; lastKnownFileType = text; path = Steamworks.lastbuildstate; sourceTree = "<group>"; };
+		43099F8F1916982A006B2EB4 /* Steamworks.obj */ = {isa = PBXFileReference; lastKnownFileType = file; path = Steamworks.obj; sourceTree = "<group>"; };
+		43099F901916982A006B2EB4 /* Steamworks.vcxprojResolveAssemblyReference.cache */ = {isa = PBXFileReference; lastKnownFileType = file; path = Steamworks.vcxprojResolveAssemblyReference.cache; sourceTree = "<group>"; };
+		43099F911916982A006B2EB4 /* Steamworks.write.1.tlog */ = {isa = PBXFileReference; lastKnownFileType = text; path = Steamworks.write.1.tlog; sourceTree = "<group>"; };
+		43099F921916982A006B2EB4 /* Steamworks_Windows.Build.CppClean.log */ = {isa = PBXFileReference; lastKnownFileType = text; path = Steamworks_Windows.Build.CppClean.log; sourceTree = "<group>"; };
+		43099F931916982A006B2EB4 /* Steamworks_Windows.dll.intermediate.manifest */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Steamworks_Windows.dll.intermediate.manifest; sourceTree = "<group>"; };
+		43099F941916982A006B2EB4 /* Steamworks_Windows.exp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.exports; path = Steamworks_Windows.exp; sourceTree = "<group>"; };
+		43099F951916982A006B2EB4 /* Steamworks_Windows.lib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = Steamworks_Windows.lib; sourceTree = "<group>"; };
+		43099F961916982A006B2EB4 /* Steamworks_Windows.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Steamworks_Windows.pch; sourceTree = "<group>"; };
+		43099F971916982A006B2EB4 /* vc100.pdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = vc100.pdb; sourceTree = "<group>"; };
+		43574FA1194A726E008EDD5E /* CloudAndWorkshop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CloudAndWorkshop.cpp; path = ../../Sources/CloudAndWorkshop.cpp; sourceTree = "<group>"; };
+		43574FA2194A726E008EDD5E /* CloudAndWorkshop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CloudAndWorkshop.h; path = ../../Sources/CloudAndWorkshop.h; sourceTree = "<group>"; };
+		43574FA3194A726E008EDD5E /* minmax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = minmax.h; path = ../../Sources/minmax.h; sourceTree = "<group>"; };
+		720E474F1251383000BC6A74 /* Plugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Plugin.cpp; path = ../../Sources/Plugin.cpp; sourceTree = SOURCE_ROOT; };
+		720E47501251383000BC6A74 /* Plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Plugin.h; path = ../../Sources/Plugin.h; sourceTree = SOURCE_ROOT; };
+		720E47561251384E00BC6A74 /* PrecompiledHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrecompiledHeader.h; path = ../../Sources/Mac/PrecompiledHeader.h; sourceTree = SOURCE_ROOT; };
+		720E478612513AEB00BC6A74 /* S3DXAIPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S3DXAIPackage.h; path = ../../Sources/S3DX/S3DXAIPackage.h; sourceTree = SOURCE_ROOT; };
+		720E478712513AEB00BC6A74 /* S3DXAIEngineAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S3DXAIEngineAPI.h; path = ../../Sources/S3DX/S3DXAIEngineAPI.h; sourceTree = SOURCE_ROOT; };
+		720E478812513AEB00BC6A74 /* S3DXPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S3DXPlatform.h; path = ../../Sources/S3DX/S3DXPlatform.h; sourceTree = SOURCE_ROOT; };
+		720E478912513AEB00BC6A74 /* S3DXMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S3DXMacros.h; path = ../../Sources/S3DX/S3DXMacros.h; sourceTree = SOURCE_ROOT; };
+		720E478A12513AEB00BC6A74 /* S3DXPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S3DXPlugin.h; path = ../../Sources/S3DX/S3DXPlugin.h; sourceTree = SOURCE_ROOT; };
+		720E478B12513AEB00BC6A74 /* S3DXAIVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S3DXAIVariable.h; path = ../../Sources/S3DX/S3DXAIVariable.h; sourceTree = SOURCE_ROOT; };
+		720E478C12513AEB00BC6A74 /* S3DXConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S3DXConfig.h; path = ../../Sources/S3DX/S3DXConfig.h; sourceTree = SOURCE_ROOT; };
+		720E478D12513AEB00BC6A74 /* S3DXAIVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S3DXAIVariables.h; path = ../../Sources/S3DX/S3DXAIVariables.h; sourceTree = SOURCE_ROOT; };
+		720E478E12513AEB00BC6A74 /* S3DXAIConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S3DXAIConstant.h; path = ../../Sources/S3DX/S3DXAIConstant.h; sourceTree = SOURCE_ROOT; };
+		720E478F12513AEB00BC6A74 /* S3DXAIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S3DXAIModel.h; path = ../../Sources/S3DX/S3DXAIModel.h; sourceTree = SOURCE_ROOT; };
+		720E479012513AEB00BC6A74 /* S3DXAIFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S3DXAIFunction.h; path = ../../Sources/S3DX/S3DXAIFunction.h; sourceTree = SOURCE_ROOT; };
+		720E479112513AEB00BC6A74 /* S3DXTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S3DXTypes.h; path = ../../Sources/S3DX/S3DXTypes.h; sourceTree = SOURCE_ROOT; };
+		800010010E9AC9E700239362 /* Leaderboards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Leaderboards.cpp; path = ../../Sources/Leaderboards.cpp; sourceTree = SOURCE_ROOT; };
+		800010020E9AC9E700239362 /* Leaderboards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Leaderboards.h; path = ../../Sources/Leaderboards.h; sourceTree = SOURCE_ROOT; };
+		800010030E9AC9E700239362 /* StatsAndAchievements.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StatsAndAchievements.cpp; path = ../../Sources/StatsAndAchievements.cpp; sourceTree = SOURCE_ROOT; };
+		800010040E9AC9E700239362 /* StatsAndAchievements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatsAndAchievements.h; path = ../../Sources/StatsAndAchievements.h; sourceTree = SOURCE_ROOT; };
+		800010050E9AC9E700239362 /* SteamMain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SteamMain.cpp; path = ../../Sources/SteamMain.cpp; sourceTree = SOURCE_ROOT; };
+		800010060E9AC9E700239362 /* SteamMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SteamMain.h; path = ../../Sources/SteamMain.h; sourceTree = SOURCE_ROOT; };
+		800010070E9AC9E700239362 /* Steamworks.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Steamworks.cpp; path = ../../Sources/Steamworks.cpp; sourceTree = SOURCE_ROOT; };
+		800010080E9AC9E700239362 /* Steamworks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Steamworks.h; path = ../../Sources/Steamworks.h; sourceTree = SOURCE_ROOT; };
+		D2AAC09D05546B4700DB518D /* Steamworks_Mac.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = Steamworks_Mac.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC09B05546B4700DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43099F9C19169861006B2EB4 /* libsteam_api.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DDFF38A45A11DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC09D05546B4700DB518D /* Steamworks_Mac.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* Steamworks */ = {
+			isa = PBXGroup;
+			children = (
+				43574FA1194A726E008EDD5E /* CloudAndWorkshop.cpp */,
+				43574FA2194A726E008EDD5E /* CloudAndWorkshop.h */,
+				43574FA3194A726E008EDD5E /* minmax.h */,
+				43099E1019169828006B2EB4 /* com.shaderman.steamworks */,
+				08FB77ACFE841707C02AAC07 /* Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DDFF38A45A11DB9C8B /* Products */,
+			);
+			name = Steamworks;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77ACFE841707C02AAC07 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				800010080E9AC9E700239362 /* Steamworks.h */,
+				800010070E9AC9E700239362 /* Steamworks.cpp */,
+				800010060E9AC9E700239362 /* SteamMain.h */,
+				800010050E9AC9E700239362 /* SteamMain.cpp */,
+				800010040E9AC9E700239362 /* StatsAndAchievements.h */,
+				800010030E9AC9E700239362 /* StatsAndAchievements.cpp */,
+				800010020E9AC9E700239362 /* Leaderboards.h */,
+				800010010E9AC9E700239362 /* Leaderboards.cpp */,
+				720E47491251380E00BC6A74 /* Mac */,
+				720E478512513ACE00BC6A74 /* S3DX */,
+				720E47501251383000BC6A74 /* Plugin.h */,
+				720E474F1251383000BC6A74 /* Plugin.cpp */,
+				43099E0F191696CD006B2EB4 /* minmax.h */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		43099E1019169828006B2EB4 /* com.shaderman.steamworks */ = {
+			isa = PBXGroup;
+			children = (
+				43099E1119169828006B2EB4 /* .gitignore */,
+				43099E1219169828006B2EB4 /* Contents */,
+				43099E2119169828006B2EB4 /* Docs */,
+				43099E2419169828006B2EB4 /* Make */,
+				43099E4819169829006B2EB4 /* Manifest.xml */,
+				43099E4919169829006B2EB4 /* Sources */,
+				43099F3919169829006B2EB4 /* Temp */,
+			);
+			name = com.shaderman.steamworks;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		43099E1219169828006B2EB4 /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				43099E1319169828006B2EB4 /* .gitignore */,
+				43099E1419169828006B2EB4 /* Android */,
+				43099E1519169828006B2EB4 /* BlackBerry */,
+				43099E1619169828006B2EB4 /* iOS */,
+				43099E1719169828006B2EB4 /* Linux */,
+				43099E1819169828006B2EB4 /* Mac */,
+				43099E1919169828006B2EB4 /* Palm */,
+				43099E1A19169828006B2EB4 /* Windows */,
+				43099E2019169828006B2EB4 /* WinRT */,
+			);
+			path = Contents;
+			sourceTree = "<group>";
+		};
+		43099E1419169828006B2EB4 /* Android */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Android;
+			sourceTree = "<group>";
+		};
+		43099E1519169828006B2EB4 /* BlackBerry */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BlackBerry;
+			sourceTree = "<group>";
+		};
+		43099E1619169828006B2EB4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		43099E1719169828006B2EB4 /* Linux */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Linux;
+			sourceTree = "<group>";
+		};
+		43099E1819169828006B2EB4 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		43099E1919169828006B2EB4 /* Palm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Palm;
+			sourceTree = "<group>";
+		};
+		43099E1A19169828006B2EB4 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				43099E1B19169828006B2EB4 /* .gitignore */,
+				43099E1C19169828006B2EB4 /* msvcr100.dll */,
+				43099E1D19169828006B2EB4 /* steam_api.dll */,
+				43099E1E19169828006B2EB4 /* Steamworks_Windows.dll */,
+				43099E1F19169828006B2EB4 /* Steamworks_Windows.pdb */,
+			);
+			path = Windows;
+			sourceTree = "<group>";
+		};
+		43099E2019169828006B2EB4 /* WinRT */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WinRT;
+			sourceTree = "<group>";
+		};
+		43099E2119169828006B2EB4 /* Docs */ = {
+			isa = PBXGroup;
+			children = (
+				43099E2219169828006B2EB4 /* BUILD.txt */,
+				43099E2319169828006B2EB4 /* SDK_version.txt */,
+			);
+			path = Docs;
+			sourceTree = "<group>";
+		};
+		43099E2419169828006B2EB4 /* Make */ = {
+			isa = PBXGroup;
+			children = (
+				43099E2519169828006B2EB4 /* .gitignore */,
+				43099E2619169828006B2EB4 /* Android */,
+				43099E2719169828006B2EB4 /* BlackBerry */,
+				43099E2819169828006B2EB4 /* Flash */,
+				43099E2919169828006B2EB4 /* iOS */,
+				43099E2D19169829006B2EB4 /* Linux */,
+				43099E2F19169829006B2EB4 /* Mac */,
+				43099E3419169829006B2EB4 /* NaCl */,
+				43099E3519169829006B2EB4 /* Palm */,
+				43099E3619169829006B2EB4 /* PS3 */,
+				43099E3719169829006B2EB4 /* Wii */,
+				43099E3819169829006B2EB4 /* Windows */,
+				43099E4319169829006B2EB4 /* WinRT */,
+				43099E4719169829006B2EB4 /* XB360 */,
+			);
+			path = Make;
+			sourceTree = "<group>";
+		};
+		43099E2619169828006B2EB4 /* Android */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Android;
+			sourceTree = "<group>";
+		};
+		43099E2719169828006B2EB4 /* BlackBerry */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BlackBerry;
+			sourceTree = "<group>";
+		};
+		43099E2819169828006B2EB4 /* Flash */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Flash;
+			sourceTree = "<group>";
+		};
+		43099E2919169828006B2EB4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				43099E2A19169828006B2EB4 /* Steamworks.xcodeproj */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		43099E2B19169828006B2EB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43099F9A1916982A006B2EB4 /* Steamworks_iOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43099E2D19169829006B2EB4 /* Linux */ = {
+			isa = PBXGroup;
+			children = (
+				43099E2E19169829006B2EB4 /* Steamworks.makefile */,
+			);
+			path = Linux;
+			sourceTree = "<group>";
+		};
+		43099E2F19169829006B2EB4 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				43099E3019169829006B2EB4 /* minmax.h */,
+				43099E3119169829006B2EB4 /* Steamworks.xcodeproj */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		43099E3219169829006B2EB4 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43099E3419169829006B2EB4 /* NaCl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NaCl;
+			sourceTree = "<group>";
+		};
+		43099E3519169829006B2EB4 /* Palm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Palm;
+			sourceTree = "<group>";
+		};
+		43099E3619169829006B2EB4 /* PS3 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PS3;
+			sourceTree = "<group>";
+		};
+		43099E3719169829006B2EB4 /* Wii */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Wii;
+			sourceTree = "<group>";
+		};
+		43099E3819169829006B2EB4 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				43099E3919169829006B2EB4 /* .gitignore */,
+				43099E3A19169829006B2EB4 /* ipch */,
+				43099E3D19169829006B2EB4 /* Steamworks.sdf */,
+				43099E3E19169829006B2EB4 /* Steamworks.sln */,
+				43099E3F19169829006B2EB4 /* Steamworks.suo */,
+				43099E4019169829006B2EB4 /* Steamworks.vcxproj */,
+				43099E4119169829006B2EB4 /* Steamworks.vcxproj.filters */,
+				43099E4219169829006B2EB4 /* Steamworks.vcxproj.user */,
+			);
+			path = Windows;
+			sourceTree = "<group>";
+		};
+		43099E3A19169829006B2EB4 /* ipch */ = {
+			isa = PBXGroup;
+			children = (
+				43099E3B19169829006B2EB4 /* steamworks-b391e953 */,
+			);
+			path = ipch;
+			sourceTree = "<group>";
+		};
+		43099E3B19169829006B2EB4 /* steamworks-b391e953 */ = {
+			isa = PBXGroup;
+			children = (
+				43099E3C19169829006B2EB4 /* steamworks_windows-a514b36f.ipch */,
+			);
+			path = "steamworks-b391e953";
+			sourceTree = "<group>";
+		};
+		43099E4319169829006B2EB4 /* WinRT */ = {
+			isa = PBXGroup;
+			children = (
+				43099E4419169829006B2EB4 /* Steamworks.sln */,
+				43099E4519169829006B2EB4 /* Steamworks.vcxproj */,
+				43099E4619169829006B2EB4 /* Steamworks.vcxproj.filters */,
+			);
+			path = WinRT;
+			sourceTree = "<group>";
+		};
+		43099E4719169829006B2EB4 /* XB360 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = XB360;
+			sourceTree = "<group>";
+		};
+		43099E4919169829006B2EB4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				43099E4A19169829006B2EB4 /* .gitignore */,
+				43099E4B19169829006B2EB4 /* Android */,
+				43099E4D19169829006B2EB4 /* BlackBerry */,
+				43099E4F19169829006B2EB4 /* iOS */,
+				43099E5119169829006B2EB4 /* Leaderboards.cpp */,
+				43099E5219169829006B2EB4 /* Leaderboards.h */,
+				43099E5319169829006B2EB4 /* Linux */,
+				43099E5519169829006B2EB4 /* Mac */,
+				43099E5719169829006B2EB4 /* NaCl */,
+				43099E5919169829006B2EB4 /* Palm */,
+				43099E5B19169829006B2EB4 /* Plugin.cpp */,
+				43099E5C19169829006B2EB4 /* Plugin.h */,
+				43099E5D19169829006B2EB4 /* PS3 */,
+				43099E5F19169829006B2EB4 /* S3DX */,
+				43099E6E19169829006B2EB4 /* StatsAndAchievements.cpp */,
+				43099E6F19169829006B2EB4 /* StatsAndAchievements.h */,
+				43099E7019169829006B2EB4 /* SteamMain.cpp */,
+				43099E7119169829006B2EB4 /* SteamMain.h */,
+				43099E7219169829006B2EB4 /* Steamworks.cpp */,
+				43099E7319169829006B2EB4 /* Steamworks.h */,
+				43099E7419169829006B2EB4 /* Steamworks_SDK */,
+				43099F2D19169829006B2EB4 /* Wii */,
+				43099F2F19169829006B2EB4 /* Windows */,
+				43099F3319169829006B2EB4 /* WinRT */,
+				43099F3619169829006B2EB4 /* XB360 */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		43099E4B19169829006B2EB4 /* Android */ = {
+			isa = PBXGroup;
+			children = (
+				43099E4C19169829006B2EB4 /* PrecompiledHeader.h */,
+			);
+			path = Android;
+			sourceTree = "<group>";
+		};
+		43099E4D19169829006B2EB4 /* BlackBerry */ = {
+			isa = PBXGroup;
+			children = (
+				43099E4E19169829006B2EB4 /* PrecompiledHeader.h */,
+			);
+			path = BlackBerry;
+			sourceTree = "<group>";
+		};
+		43099E4F19169829006B2EB4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				43099E5019169829006B2EB4 /* PrecompiledHeader.h */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		43099E5319169829006B2EB4 /* Linux */ = {
+			isa = PBXGroup;
+			children = (
+				43099E5419169829006B2EB4 /* PrecompiledHeader.h */,
+			);
+			path = Linux;
+			sourceTree = "<group>";
+		};
+		43099E5519169829006B2EB4 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				43099E5619169829006B2EB4 /* PrecompiledHeader.h */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		43099E5719169829006B2EB4 /* NaCl */ = {
+			isa = PBXGroup;
+			children = (
+				43099E5819169829006B2EB4 /* PrecompiledHeader.h */,
+			);
+			path = NaCl;
+			sourceTree = "<group>";
+		};
+		43099E5919169829006B2EB4 /* Palm */ = {
+			isa = PBXGroup;
+			children = (
+				43099E5A19169829006B2EB4 /* PrecompiledHeader.h */,
+			);
+			path = Palm;
+			sourceTree = "<group>";
+		};
+		43099E5D19169829006B2EB4 /* PS3 */ = {
+			isa = PBXGroup;
+			children = (
+				43099E5E19169829006B2EB4 /* PrecompiledHeader.h */,
+			);
+			path = PS3;
+			sourceTree = "<group>";
+		};
+		43099E5F19169829006B2EB4 /* S3DX */ = {
+			isa = PBXGroup;
+			children = (
+				43099E6019169829006B2EB4 /* S3DXAIConstant.h */,
+				43099E6119169829006B2EB4 /* S3DXAIEngineAPI.h */,
+				43099E6219169829006B2EB4 /* S3DXAIFunction.h */,
+				43099E6319169829006B2EB4 /* S3DXAIModel.h */,
+				43099E6419169829006B2EB4 /* S3DXAIPackage.h */,
+				43099E6519169829006B2EB4 /* S3DXAIVariable.h */,
+				43099E6619169829006B2EB4 /* S3DXAIVariables.h */,
+				43099E6719169829006B2EB4 /* S3DXAndroidTools.jar */,
+				43099E6819169829006B2EB4 /* S3DXAudioBackend.h */,
+				43099E6919169829006B2EB4 /* S3DXConfig.h */,
+				43099E6A19169829006B2EB4 /* S3DXMacros.h */,
+				43099E6B19169829006B2EB4 /* S3DXPlatform.h */,
+				43099E6C19169829006B2EB4 /* S3DXPlugin.h */,
+				43099E6D19169829006B2EB4 /* S3DXTypes.h */,
+			);
+			path = S3DX;
+			sourceTree = "<group>";
+		};
+		43099E7419169829006B2EB4 /* Steamworks_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				43099E7519169829006B2EB4 /* client */,
+				43099E7819169829006B2EB4 /* glmgr */,
+				43099E9419169829006B2EB4 /* public */,
+				43099EC219169829006B2EB4 /* Readme.txt */,
+				43099EC319169829006B2EB4 /* redistributable_bin */,
+				43099EDB19169829006B2EB4 /* tools */,
+			);
+			path = Steamworks_SDK;
+			sourceTree = "<group>";
+		};
+		43099E7519169829006B2EB4 /* client */ = {
+			isa = PBXGroup;
+			children = (
+				43099E7619169829006B2EB4 /* steam.cfg */,
+				43099E7719169829006B2EB4 /* steam.exe */,
+			);
+			path = client;
+			sourceTree = "<group>";
+		};
+		43099E7819169829006B2EB4 /* glmgr */ = {
+			isa = PBXGroup;
+			children = (
+				43099E7919169829006B2EB4 /* cglmbuffer.cpp */,
+				43099E7A19169829006B2EB4 /* cglmbuffer.h */,
+				43099E7B19169829006B2EB4 /* cglmfbo.cpp */,
+				43099E7C19169829006B2EB4 /* cglmfbo.h */,
+				43099E7D19169829006B2EB4 /* cglmprogram.cpp */,
+				43099E7E19169829006B2EB4 /* cglmprogram.h */,
+				43099E7F19169829006B2EB4 /* cglmquery.cpp */,
+				43099E8019169829006B2EB4 /* cglmquery.h */,
+				43099E8119169829006B2EB4 /* cglmtex.cpp */,
+				43099E8219169829006B2EB4 /* cglmtex.h */,
+				43099E8319169829006B2EB4 /* dx9asmtogl2.cpp */,
+				43099E8419169829006B2EB4 /* dx9asmtogl2.h */,
+				43099E8519169829006B2EB4 /* dxabstract.cpp */,
+				43099E8619169829006B2EB4 /* dxabstract.h */,
+				43099E8719169829006B2EB4 /* glmdebug.h */,
+				43099E8819169829006B2EB4 /* glmdisplay.h */,
+				43099E8919169829006B2EB4 /* glmgr.cpp */,
+				43099E8A19169829006B2EB4 /* glmgr.h */,
+				43099E8B19169829006B2EB4 /* glmgrbasics.cpp */,
+				43099E8C19169829006B2EB4 /* glmgrbasics.h */,
+				43099E8D19169829006B2EB4 /* glmgrcocoa.mm */,
+				43099E8E19169829006B2EB4 /* glmgrext.cpp */,
+				43099E8F19169829006B2EB4 /* glmgrext.h */,
+				43099E9019169829006B2EB4 /* imageformat.h */,
+				43099E9119169829006B2EB4 /* mathlite.cpp */,
+				43099E9219169829006B2EB4 /* mathlite.h */,
+				43099E9319169829006B2EB4 /* readme.txt */,
+			);
+			path = glmgr;
+			sourceTree = "<group>";
+		};
+		43099E9419169829006B2EB4 /* public */ = {
+			isa = PBXGroup;
+			children = (
+				43099E9519169829006B2EB4 /* steam */,
+			);
+			path = public;
+			sourceTree = "<group>";
+		};
+		43099E9519169829006B2EB4 /* steam */ = {
+			isa = PBXGroup;
+			children = (
+				43099E9619169829006B2EB4 /* isteamapps.h */,
+				43099E9719169829006B2EB4 /* isteamappticket.h */,
+				43099E9819169829006B2EB4 /* isteamclient.h */,
+				43099E9919169829006B2EB4 /* isteamcontroller.h */,
+				43099E9A19169829006B2EB4 /* isteamfriends.h */,
+				43099E9B19169829006B2EB4 /* isteamgamecoordinator.h */,
+				43099E9C19169829006B2EB4 /* isteamgameserver.h */,
+				43099E9D19169829006B2EB4 /* isteamgameserverstats.h */,
+				43099E9E19169829006B2EB4 /* isteamhttp.h */,
+				43099E9F19169829006B2EB4 /* isteammasterserverupdater.h */,
+				43099EA019169829006B2EB4 /* isteammatchmaking.h */,
+				43099EA119169829006B2EB4 /* isteamnetworking.h */,
+				43099EA219169829006B2EB4 /* isteamps3overlayrenderer.h */,
+				43099EA319169829006B2EB4 /* isteamremotestorage.h */,
+				43099EA419169829006B2EB4 /* isteamscreenshots.h */,
+				43099EA519169829006B2EB4 /* isteamugc.h */,
+				43099EA619169829006B2EB4 /* isteamunifiedmessages.h */,
+				43099EA719169829006B2EB4 /* isteamuser.h */,
+				43099EA819169829006B2EB4 /* isteamuserstats.h */,
+				43099EA919169829006B2EB4 /* isteamutils.h */,
+				43099EAA19169829006B2EB4 /* lib */,
+				43099EB719169829006B2EB4 /* matchmakingtypes.h */,
+				43099EB819169829006B2EB4 /* steam_api.h */,
+				43099EB919169829006B2EB4 /* steam_gameserver.h */,
+				43099EBA19169829006B2EB4 /* steamclientpublic.h */,
+				43099EBB19169829006B2EB4 /* steamcontrollerpublic.h */,
+				43099EBC19169829006B2EB4 /* steamencryptedappticket.h */,
+				43099EBD19169829006B2EB4 /* steamhttpenums.h */,
+				43099EBE19169829006B2EB4 /* steamps3params.h */,
+				43099EBF19169829006B2EB4 /* steamtypes.h */,
+				43099EC019169829006B2EB4 /* steamuniverse.h */,
+				43099EC119169829006B2EB4 /* steamvr.h */,
+			);
+			path = steam;
+			sourceTree = "<group>";
+		};
+		43099EAA19169829006B2EB4 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				43099EAB19169829006B2EB4 /* linux32 */,
+				43099EAD19169829006B2EB4 /* linux64 */,
+				43099EAF19169829006B2EB4 /* osx32 */,
+				43099EB119169829006B2EB4 /* win32 */,
+				43099EB419169829006B2EB4 /* win64 */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		43099EAB19169829006B2EB4 /* linux32 */ = {
+			isa = PBXGroup;
+			children = (
+				43099EAC19169829006B2EB4 /* libsdkencryptedappticket.so */,
+			);
+			path = linux32;
+			sourceTree = "<group>";
+		};
+		43099EAD19169829006B2EB4 /* linux64 */ = {
+			isa = PBXGroup;
+			children = (
+				43099EAE19169829006B2EB4 /* libsdkencryptedappticket.so */,
+			);
+			path = linux64;
+			sourceTree = "<group>";
+		};
+		43099EAF19169829006B2EB4 /* osx32 */ = {
+			isa = PBXGroup;
+			children = (
+				43099EB019169829006B2EB4 /* libsdkencryptedappticket.dylib */,
+			);
+			path = osx32;
+			sourceTree = "<group>";
+		};
+		43099EB119169829006B2EB4 /* win32 */ = {
+			isa = PBXGroup;
+			children = (
+				43099EB219169829006B2EB4 /* sdkencryptedappticket.dll */,
+				43099EB319169829006B2EB4 /* sdkencryptedappticket.lib */,
+			);
+			path = win32;
+			sourceTree = "<group>";
+		};
+		43099EB419169829006B2EB4 /* win64 */ = {
+			isa = PBXGroup;
+			children = (
+				43099EB519169829006B2EB4 /* sdkencryptedappticket64.dll */,
+				43099EB619169829006B2EB4 /* sdkencryptedappticket64.lib */,
+			);
+			path = win64;
+			sourceTree = "<group>";
+		};
+		43099EC319169829006B2EB4 /* redistributable_bin */ = {
+			isa = PBXGroup;
+			children = (
+				43099EC419169829006B2EB4 /* linux32 */,
+				43099ECA19169829006B2EB4 /* linux64 */,
+				43099ECC19169829006B2EB4 /* osx32 */,
+				43099ED219169829006B2EB4 /* Steam.dll */,
+				43099ED319169829006B2EB4 /* steam_api.dll */,
+				43099ED419169829006B2EB4 /* steam_api.lib */,
+				43099ED519169829006B2EB4 /* steamclient.dll */,
+				43099ED619169829006B2EB4 /* tier0_s.dll */,
+				43099ED719169829006B2EB4 /* vstdlib_s.dll */,
+				43099ED819169829006B2EB4 /* win64 */,
+			);
+			path = redistributable_bin;
+			sourceTree = "<group>";
+		};
+		43099EC419169829006B2EB4 /* linux32 */ = {
+			isa = PBXGroup;
+			children = (
+				43099EC519169829006B2EB4 /* libsteam.so */,
+				43099EC619169829006B2EB4 /* libsteam_api.so */,
+				43099EC719169829006B2EB4 /* libtier0_s.so */,
+				43099EC819169829006B2EB4 /* libvstdlib_s.so */,
+				43099EC919169829006B2EB4 /* steamclient.so */,
+			);
+			path = linux32;
+			sourceTree = "<group>";
+		};
+		43099ECA19169829006B2EB4 /* linux64 */ = {
+			isa = PBXGroup;
+			children = (
+				43099ECB19169829006B2EB4 /* libsteam_api.so */,
+			);
+			path = linux64;
+			sourceTree = "<group>";
+		};
+		43099ECC19169829006B2EB4 /* osx32 */ = {
+			isa = PBXGroup;
+			children = (
+				43099ECD19169829006B2EB4 /* libsteam.dylib */,
+				43099ECE19169829006B2EB4 /* libsteam_api.dylib */,
+				43099ECF19169829006B2EB4 /* libtier0_s.dylib */,
+				43099ED019169829006B2EB4 /* libvstdlib_s.dylib */,
+				43099ED119169829006B2EB4 /* steamclient.dylib */,
+			);
+			path = osx32;
+			sourceTree = "<group>";
+		};
+		43099ED819169829006B2EB4 /* win64 */ = {
+			isa = PBXGroup;
+			children = (
+				43099ED919169829006B2EB4 /* steam_api64.dll */,
+				43099EDA19169829006B2EB4 /* steam_api64.lib */,
+			);
+			path = win64;
+			sourceTree = "<group>";
+		};
+		43099EDB19169829006B2EB4 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				43099EDC19169829006B2EB4 /* ContentBuilder */,
+				43099EE819169829006B2EB4 /* ContentPrep.zip */,
+				43099EE919169829006B2EB4 /* ContentServer */,
+				43099EEF19169829006B2EB4 /* drm */,
+				43099EFC19169829006B2EB4 /* goldmaster */,
+				43099F2A19169829006B2EB4 /* linux */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		43099EDC19169829006B2EB4 /* ContentBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				43099EDD19169829006B2EB4 /* builder */,
+				43099EDF19169829006B2EB4 /* content */,
+				43099EE119169829006B2EB4 /* output */,
+				43099EE319169829006B2EB4 /* readme.txt */,
+				43099EE419169829006B2EB4 /* run_build.bat */,
+				43099EE519169829006B2EB4 /* scripts */,
+			);
+			path = ContentBuilder;
+			sourceTree = "<group>";
+		};
+		43099EDD19169829006B2EB4 /* builder */ = {
+			isa = PBXGroup;
+			children = (
+				43099EDE19169829006B2EB4 /* steamcmd.exe */,
+			);
+			path = builder;
+			sourceTree = "<group>";
+		};
+		43099EDF19169829006B2EB4 /* content */ = {
+			isa = PBXGroup;
+			children = (
+				43099EE019169829006B2EB4 /* your game content lives here.txt */,
+			);
+			path = content;
+			sourceTree = "<group>";
+		};
+		43099EE119169829006B2EB4 /* output */ = {
+			isa = PBXGroup;
+			children = (
+				43099EE219169829006B2EB4 /* for build logs and intermediate files.txt */,
+			);
+			path = output;
+			sourceTree = "<group>";
+		};
+		43099EE519169829006B2EB4 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				43099EE619169829006B2EB4 /* app_build_1000.vdf */,
+				43099EE719169829006B2EB4 /* depot_build_1001.vdf */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
+		43099EE919169829006B2EB4 /* ContentServer */ = {
+			isa = PBXGroup;
+			children = (
+				43099EEA19169829006B2EB4 /* htdocs */,
+				43099EEC19169829006B2EB4 /* mongoose-3.1.exe */,
+				43099EED19169829006B2EB4 /* mongoose-license.txt */,
+				43099EEE19169829006B2EB4 /* mongoose.conf */,
+			);
+			path = ContentServer;
+			sourceTree = "<group>";
+		};
+		43099EEA19169829006B2EB4 /* htdocs */ = {
+			isa = PBXGroup;
+			children = (
+				43099EEB19169829006B2EB4 /* index.html */,
+			);
+			path = htdocs;
+			sourceTree = "<group>";
+		};
+		43099EEF19169829006B2EB4 /* drm */ = {
+			isa = PBXGroup;
+			children = (
+				43099EF019169829006B2EB4 /* drmtool.cfg */,
+				43099EF119169829006B2EB4 /* drmtool.exe */,
+				43099EF219169829006B2EB4 /* drmtoolp.exe */,
+				43099EF319169829006B2EB4 /* Readme.txt */,
+				43099EF419169829006B2EB4 /* ubuntu12_32 */,
+				43099EF819169829006B2EB4 /* ubuntu12_64 */,
+			);
+			path = drm;
+			sourceTree = "<group>";
+		};
+		43099EF419169829006B2EB4 /* ubuntu12_32 */ = {
+			isa = PBXGroup;
+			children = (
+				43099EF519169829006B2EB4 /* drmtoolp */,
+				43099EF619169829006B2EB4 /* drmunpackp.so */,
+				43099EF719169829006B2EB4 /* steamdrmp.so */,
+			);
+			path = ubuntu12_32;
+			sourceTree = "<group>";
+		};
+		43099EF819169829006B2EB4 /* ubuntu12_64 */ = {
+			isa = PBXGroup;
+			children = (
+				43099EF919169829006B2EB4 /* drmtoolp */,
+				43099EFA19169829006B2EB4 /* drmunpackp.so */,
+				43099EFB19169829006B2EB4 /* steamdrmp.so */,
+			);
+			path = ubuntu12_64;
+			sourceTree = "<group>";
+		};
+		43099EFC19169829006B2EB4 /* goldmaster */ = {
+			isa = PBXGroup;
+			children = (
+				43099EFD19169829006B2EB4 /* disk_assets */,
+				43099F2819169829006B2EB4 /* project_example.bat */,
+				43099F2919169829006B2EB4 /* sku_project_example.txt */,
+			);
+			path = goldmaster;
+			sourceTree = "<group>";
+		};
+		43099EFD19169829006B2EB4 /* disk_assets */ = {
+			isa = PBXGroup;
+			children = (
+				43099EFE19169829006B2EB4 /* autorun.inf */,
+				43099EFF19169829006B2EB4 /* icon.ico */,
+				43099F0019169829006B2EB4 /* resources */,
+				43099F2019169829006B2EB4 /* Setup.exe */,
+				43099F2119169829006B2EB4 /* setup.ini */,
+				43099F2219169829006B2EB4 /* splash.tga */,
+				43099F2319169829006B2EB4 /* SteamRetailInstaller.dmg */,
+				43099F2419169829006B2EB4 /* SteamService.exe */,
+				43099F2519169829006B2EB4 /* SteamworksExample_disk1.sim */,
+				43099F2619169829006B2EB4 /* SteamworksExample_disk1.sis */,
+				43099F2719169829006B2EB4 /* SteamworksExample_disk1_0.sid */,
+			);
+			path = disk_assets;
+			sourceTree = "<group>";
+		};
+		43099F0019169829006B2EB4 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				43099F0119169829006B2EB4 /* click.wav */,
+				43099F0219169829006B2EB4 /* eula.rtf */,
+				43099F0319169829006B2EB4 /* hover.wav */,
+				43099F0419169829006B2EB4 /* installscript.vdf */,
+				43099F0519169829006B2EB4 /* launch.wav */,
+				43099F0619169829006B2EB4 /* readme.txt */,
+				43099F0719169829006B2EB4 /* redist */,
+				43099F0919169829006B2EB4 /* setup.bmp */,
+				43099F0A19169829006B2EB4 /* setup_arabic.ini */,
+				43099F0B19169829006B2EB4 /* setup_czech.ini */,
+				43099F0C19169829006B2EB4 /* setup_danish.ini */,
+				43099F0D19169829006B2EB4 /* setup_dutch.ini */,
+				43099F0E19169829006B2EB4 /* setup_english.ini */,
+				43099F0F19169829006B2EB4 /* setup_finnish.ini */,
+				43099F1019169829006B2EB4 /* setup_french.ini */,
+				43099F1119169829006B2EB4 /* setup_german.ini */,
+				43099F1219169829006B2EB4 /* setup_hungarian.ini */,
+				43099F1319169829006B2EB4 /* setup_italian.ini */,
+				43099F1419169829006B2EB4 /* setup_japanese.ini */,
+				43099F1519169829006B2EB4 /* setup_korean.ini */,
+				43099F1619169829006B2EB4 /* setup_norwegian.ini */,
+				43099F1719169829006B2EB4 /* setup_polish.ini */,
+				43099F1819169829006B2EB4 /* setup_portuguese.ini */,
+				43099F1919169829006B2EB4 /* setup_russian.ini */,
+				43099F1A19169829006B2EB4 /* setup_schinese.ini */,
+				43099F1B19169829006B2EB4 /* setup_spanish.ini */,
+				43099F1C19169829006B2EB4 /* setup_swedish.ini */,
+				43099F1D19169829006B2EB4 /* setup_tchinese.ini */,
+				43099F1E19169829006B2EB4 /* setup_thai.ini */,
+				43099F1F19169829006B2EB4 /* SteamInstall_English.msi */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		43099F0719169829006B2EB4 /* redist */ = {
+			isa = PBXGroup;
+			children = (
+				43099F0819169829006B2EB4 /* vcredist_x86.exe */,
+			);
+			path = redist;
+			sourceTree = "<group>";
+		};
+		43099F2A19169829006B2EB4 /* linux */ = {
+			isa = PBXGroup;
+			children = (
+				43099F2B19169829006B2EB4 /* README.txt */,
+				43099F2C19169829006B2EB4 /* setup.sh */,
+			);
+			path = linux;
+			sourceTree = "<group>";
+		};
+		43099F2D19169829006B2EB4 /* Wii */ = {
+			isa = PBXGroup;
+			children = (
+				43099F2E19169829006B2EB4 /* PrecompiledHeader.h */,
+			);
+			path = Wii;
+			sourceTree = "<group>";
+		};
+		43099F2F19169829006B2EB4 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				43099F3019169829006B2EB4 /* DLLMain.cpp */,
+				43099F3119169829006B2EB4 /* PrecompiledHeader.cpp */,
+				43099F3219169829006B2EB4 /* PrecompiledHeader.h */,
+			);
+			path = Windows;
+			sourceTree = "<group>";
+		};
+		43099F3319169829006B2EB4 /* WinRT */ = {
+			isa = PBXGroup;
+			children = (
+				43099F3419169829006B2EB4 /* PrecompiledHeader.cpp */,
+				43099F3519169829006B2EB4 /* PrecompiledHeader.h */,
+			);
+			path = WinRT;
+			sourceTree = "<group>";
+		};
+		43099F3619169829006B2EB4 /* XB360 */ = {
+			isa = PBXGroup;
+			children = (
+				43099F3719169829006B2EB4 /* PrecompiledHeader.cpp */,
+				43099F3819169829006B2EB4 /* PrecompiledHeader.h */,
+			);
+			path = XB360;
+			sourceTree = "<group>";
+		};
+		43099F3919169829006B2EB4 /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				43099F3A19169829006B2EB4 /* Mac */,
+				43099F621916982A006B2EB4 /* Windows */,
+			);
+			path = Temp;
+			sourceTree = "<group>";
+		};
+		43099F3A19169829006B2EB4 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				43099F3B19169829006B2EB4 /* Steamworks.build */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		43099F3B19169829006B2EB4 /* Steamworks.build */ = {
+			isa = PBXGroup;
+			children = (
+				43099F3C19169829006B2EB4 /* Debug */,
+			);
+			path = Steamworks.build;
+			sourceTree = "<group>";
+		};
+		43099F3C19169829006B2EB4 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				43099F3D19169829006B2EB4 /* Steamworks.build */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		43099F3D19169829006B2EB4 /* Steamworks.build */ = {
+			isa = PBXGroup;
+			children = (
+				43099F3E19169829006B2EB4 /* build-state.dat */,
+				43099F3F19169829006B2EB4 /* Objects-normal */,
+				43099F5C1916982A006B2EB4 /* Steamworks.dep */,
+				43099F5D1916982A006B2EB4 /* Steamworks_Mac-all-target-headers.hmap */,
+				43099F5E1916982A006B2EB4 /* Steamworks_Mac-generated-files.hmap */,
+				43099F5F1916982A006B2EB4 /* Steamworks_Mac-own-target-headers.hmap */,
+				43099F601916982A006B2EB4 /* Steamworks_Mac-project-headers.hmap */,
+				43099F611916982A006B2EB4 /* Steamworks_Mac.hmap */,
+			);
+			path = Steamworks.build;
+			sourceTree = "<group>";
+		};
+		43099F3F19169829006B2EB4 /* Objects-normal */ = {
+			isa = PBXGroup;
+			children = (
+				43099F4019169829006B2EB4 /* i386 */,
+				43099F4B1916982A006B2EB4 /* x86_64 */,
+			);
+			path = "Objects-normal";
+			sourceTree = "<group>";
+		};
+		43099F4019169829006B2EB4 /* i386 */ = {
+			isa = PBXGroup;
+			children = (
+				43099F4119169829006B2EB4 /* StatsAndAchievements.d */,
+				43099F4219169829006B2EB4 /* StatsAndAchievements.dia */,
+				43099F4319169829006B2EB4 /* StatsAndAchievements.o */,
+				43099F4419169829006B2EB4 /* SteamMain.d */,
+				43099F4519169829006B2EB4 /* SteamMain.dia */,
+				43099F4619169829006B2EB4 /* SteamMain.o */,
+				43099F4719169829006B2EB4 /* Steamworks.d */,
+				43099F4819169829006B2EB4 /* Steamworks.dia */,
+				43099F4919169829006B2EB4 /* Steamworks.o */,
+				43099F4A1916982A006B2EB4 /* Steamworks_Mac.LinkFileList */,
+			);
+			path = i386;
+			sourceTree = "<group>";
+		};
+		43099F4B1916982A006B2EB4 /* x86_64 */ = {
+			isa = PBXGroup;
+			children = (
+				43099F4C1916982A006B2EB4 /* Leaderboards.d */,
+				43099F4D1916982A006B2EB4 /* Leaderboards.dia */,
+				43099F4E1916982A006B2EB4 /* Leaderboards.o */,
+				43099F4F1916982A006B2EB4 /* Plugin.d */,
+				43099F501916982A006B2EB4 /* Plugin.dia */,
+				43099F511916982A006B2EB4 /* Plugin.o */,
+				43099F521916982A006B2EB4 /* StatsAndAchievements.d */,
+				43099F531916982A006B2EB4 /* StatsAndAchievements.dia */,
+				43099F541916982A006B2EB4 /* StatsAndAchievements.o */,
+				43099F551916982A006B2EB4 /* SteamMain.d */,
+				43099F561916982A006B2EB4 /* SteamMain.dia */,
+				43099F571916982A006B2EB4 /* SteamMain.o */,
+				43099F581916982A006B2EB4 /* Steamworks.d */,
+				43099F591916982A006B2EB4 /* Steamworks.dia */,
+				43099F5A1916982A006B2EB4 /* Steamworks.o */,
+				43099F5B1916982A006B2EB4 /* Steamworks_Mac.LinkFileList */,
+			);
+			path = x86_64;
+			sourceTree = "<group>";
+		};
+		43099F621916982A006B2EB4 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				43099F631916982A006B2EB4 /* Debug */,
+				43099F7F1916982A006B2EB4 /* Release */,
+			);
+			path = Windows;
+			sourceTree = "<group>";
+		};
+		43099F631916982A006B2EB4 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				43099F641916982A006B2EB4 /* cl.command.1.tlog */,
+				43099F651916982A006B2EB4 /* CL.read.1.tlog */,
+				43099F661916982A006B2EB4 /* CL.write.1.tlog */,
+				43099F671916982A006B2EB4 /* DLLMain.obj */,
+				43099F681916982A006B2EB4 /* Leaderboards.obj */,
+				43099F691916982A006B2EB4 /* link.command.1.tlog */,
+				43099F6A1916982A006B2EB4 /* link.read.1.tlog */,
+				43099F6B1916982A006B2EB4 /* link.write.1.tlog */,
+				43099F6C1916982A006B2EB4 /* mt.command.1.tlog */,
+				43099F6D1916982A006B2EB4 /* mt.read.1.tlog */,
+				43099F6E1916982A006B2EB4 /* mt.write.1.tlog */,
+				43099F6F1916982A006B2EB4 /* Plugin.obj */,
+				43099F701916982A006B2EB4 /* PrecompiledHeader.obj */,
+				43099F711916982A006B2EB4 /* StatsAndAchievements.obj */,
+				43099F721916982A006B2EB4 /* SteamMain.obj */,
+				43099F731916982A006B2EB4 /* Steamworks.lastbuildstate */,
+				43099F741916982A006B2EB4 /* Steamworks.log */,
+				43099F751916982A006B2EB4 /* Steamworks.obj */,
+				43099F761916982A006B2EB4 /* Steamworks.vcxprojResolveAssemblyReference.cache */,
+				43099F771916982A006B2EB4 /* Steamworks.write.1.tlog */,
+				43099F781916982A006B2EB4 /* Steamworks_Windows.dll.intermediate.manifest */,
+				43099F791916982A006B2EB4 /* Steamworks_Windows.exp */,
+				43099F7A1916982A006B2EB4 /* Steamworks_Windows.lib */,
+				43099F7B1916982A006B2EB4 /* Steamworks_Windows.manifest */,
+				43099F7C1916982A006B2EB4 /* Steamworks_Windows.pch */,
+				43099F7D1916982A006B2EB4 /* Steamworks_Windows.pdb */,
+				43099F7E1916982A006B2EB4 /* vc100.pdb */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		43099F7F1916982A006B2EB4 /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				43099F801916982A006B2EB4 /* cl.command.1.tlog */,
+				43099F811916982A006B2EB4 /* CL.read.1.tlog */,
+				43099F821916982A006B2EB4 /* CL.write.1.tlog */,
+				43099F831916982A006B2EB4 /* DLLMain.obj */,
+				43099F841916982A006B2EB4 /* link.command.1.tlog */,
+				43099F851916982A006B2EB4 /* link.read.1.tlog */,
+				43099F861916982A006B2EB4 /* link.write.1.tlog */,
+				43099F871916982A006B2EB4 /* mt.command.1.tlog */,
+				43099F881916982A006B2EB4 /* mt.read.1.tlog */,
+				43099F891916982A006B2EB4 /* mt.write.1.tlog */,
+				43099F8A1916982A006B2EB4 /* Plugin.obj */,
+				43099F8B1916982A006B2EB4 /* PrecompiledHeader.obj */,
+				43099F8C1916982A006B2EB4 /* StatsAndAchievements.obj */,
+				43099F8D1916982A006B2EB4 /* SteamMain.obj */,
+				43099F8E1916982A006B2EB4 /* Steamworks.lastbuildstate */,
+				43099F8F1916982A006B2EB4 /* Steamworks.obj */,
+				43099F901916982A006B2EB4 /* Steamworks.vcxprojResolveAssemblyReference.cache */,
+				43099F911916982A006B2EB4 /* Steamworks.write.1.tlog */,
+				43099F921916982A006B2EB4 /* Steamworks_Windows.Build.CppClean.log */,
+				43099F931916982A006B2EB4 /* Steamworks_Windows.dll.intermediate.manifest */,
+				43099F941916982A006B2EB4 /* Steamworks_Windows.exp */,
+				43099F951916982A006B2EB4 /* Steamworks_Windows.lib */,
+				43099F961916982A006B2EB4 /* Steamworks_Windows.pch */,
+				43099F971916982A006B2EB4 /* vc100.pdb */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
+		720E47491251380E00BC6A74 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				720E47561251384E00BC6A74 /* PrecompiledHeader.h */,
+			);
+			name = Mac;
+			sourceTree = "<group>";
+		};
+		720E478512513ACE00BC6A74 /* S3DX */ = {
+			isa = PBXGroup;
+			children = (
+				720E478612513AEB00BC6A74 /* S3DXAIPackage.h */,
+				720E478712513AEB00BC6A74 /* S3DXAIEngineAPI.h */,
+				720E478812513AEB00BC6A74 /* S3DXPlatform.h */,
+				720E478912513AEB00BC6A74 /* S3DXMacros.h */,
+				720E478A12513AEB00BC6A74 /* S3DXPlugin.h */,
+				720E478B12513AEB00BC6A74 /* S3DXAIVariable.h */,
+				720E478C12513AEB00BC6A74 /* S3DXConfig.h */,
+				720E478D12513AEB00BC6A74 /* S3DXAIVariables.h */,
+				720E478E12513AEB00BC6A74 /* S3DXAIConstant.h */,
+				720E478F12513AEB00BC6A74 /* S3DXAIModel.h */,
+				720E479012513AEB00BC6A74 /* S3DXAIFunction.h */,
+				720E479112513AEB00BC6A74 /* S3DXTypes.h */,
+			);
+			name = S3DX;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC09C05546B4700DB518D /* Steamworks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB916008733D950010E9CD /* Build configuration list for PBXNativeTarget "Steamworks" */;
+			buildPhases = (
+				D2AAC09B05546B4700DB518D /* Frameworks */,
+				D2AAC09A05546B4700DB518D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Steamworks;
+			productName = libSteamworks_Mac;
+			productReference = D2AAC09D05546B4700DB518D /* Steamworks_Mac.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = 1DEB916408733D950010E9CD /* Build configuration list for PBXProject "Steamworks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* Steamworks */;
+			productRefGroup = 034768DDFF38A45A11DB9C8B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 43099E3219169829006B2EB4 /* Products */;
+					ProjectRef = 43099E3119169829006B2EB4 /* Steamworks.xcodeproj */;
+				},
+				{
+					ProductGroup = 43099E2B19169828006B2EB4 /* Products */;
+					ProjectRef = 43099E2A19169828006B2EB4 /* Steamworks.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D2AAC09C05546B4700DB518D /* Steamworks */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		43099F9A1916982A006B2EB4 /* Steamworks_iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = Steamworks_iOS.a;
+			remoteRef = 43099F991916982A006B2EB4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC09A05546B4700DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				800000040E9AC9E700239362 /* Steamworks.cpp in Sources */,
+				800000030E9AC9E700239362 /* SteamMain.cpp in Sources */,
+				800000020E9AC9E700239362 /* StatsAndAchievements.cpp in Sources */,
+				800000010E9AC9E700239362 /* Leaderboards.cpp in Sources */,
+				720E47531251383000BC6A74 /* Plugin.cpp in Sources */,
+				43574FA4194A726E008EDD5E /* CloudAndWorkshop.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB916108733D950010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ../../Sources/Mac/PrecompiledHeader.h;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../Sources/Steamworks_SDK/redistributable_bin/osx32\"";
+				OBJROOT = ../../Temp/Mac/;
+				PRODUCT_NAME = Steamworks_Mac;
+				USER_HEADER_SEARCH_PATHS = "../../Sources/**";
+			};
+			name = Debug;
+		};
+		1DEB916208733D950010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ../../Sources/Mac/PrecompiledHeader.h;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../Sources/Steamworks_SDK/redistributable_bin/osx32\"";
+				OBJROOT = ../../Temp/Mac/;
+				PRODUCT_NAME = Steamworks_Mac;
+				STRIP_INSTALLED_PRODUCT = YES;
+				STRIP_STYLE = "non-global";
+				USER_HEADER_SEARCH_PATHS = "../../Sources/**";
+			};
+			name = Release;
+		};
+		1DEB916508733D950010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CONFIGURATION_BUILD_DIR = ../../Contents/Mac/;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					S3DX_DLL,
+					__MAC__,
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				SDKROOT = macosx;
+				SYMROOT = ../../Temp/Mac;
+				USER_HEADER_SEARCH_PATHS = ../../Sources/;
+				VALID_ARCHS = i386;
+			};
+			name = Debug;
+		};
+		1DEB916608733D950010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CONFIGURATION_BUILD_DIR = ../../Contents/Mac/;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					S3DX_DLL,
+					__MAC__,
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				SDKROOT = macosx;
+				SYMROOT = ../../Temp/Mac;
+				USER_HEADER_SEARCH_PATHS = ../../Sources/;
+				VALID_ARCHS = i386;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB916008733D950010E9CD /* Build configuration list for PBXNativeTarget "Steamworks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB916108733D950010E9CD /* Debug */,
+				1DEB916208733D950010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB916408733D950010E9CD /* Build configuration list for PBXProject "Steamworks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB916508733D950010E9CD /* Debug */,
+				1DEB916608733D950010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

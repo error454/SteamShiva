@@ -1,0 +1,12 @@
+Build/*
+Models/Thumbnails
+Scenes/Thumbnails
+Resources/Materials/Thumbnails/*
+Resources/Textures/Thumbnails/*
+Resources/Meshes/Thumbnails/*
+Plugins/com.shaderman.steamworks/Sources/Steamworks_SDK/*
+Saves/*
+*.bak
+Project.cfg
+*.ccz
+*.DS_Store

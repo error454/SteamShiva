@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+	<plugin name="Steamworks" version="1.0.0" s3dx_sdk_version="0x1090200">
+
+		<info>
+			<description>Steamworks for ShiVa</description>
+			<author>
+				<name>Shaderman</name>
+				<mail>dev@shaderman.com</mail>
+				<site>http://www.shaderman.com</site>
+			</author>
+		</info>
+
+		<certificate></certificate>
+
+		<files>
+			<platform type="Windows">
+				<arch type="x86_32">Steamworks_Windows.dll</arch>
+			</platform>
+
+			<platform type="WinRT">
+				<arch type="x86_32">Steamworks_WinRT_x86_32.dll</arch>
+				<arch type="x86_64">Steamworks_WinRT_x86_64.dll</arch>
+				<arch type="arm_32">Steamworks_WinRT_arm_32.dll</arch>
+			</platform>
+
+			<platform type="WinRT" toolset="wp8">
+				<arch type="x86_32">Steamworks_WinRT_wp8_x86_32.dll</arch>
+				<arch type="arm_32">Steamworks_WinRT_wp8_arm_32.dll</arch>
+			</platform>
+
+			<platform type="Mac">
+				<arch type="ppc_32">Steamworks_Mac.dylib</arch>
+				<arch type="ppc_64">Steamworks_Mac.dylib</arch>
+				<arch type="x86_32">Steamworks_Mac.dylib</arch>
+				<arch type="x86_64">Steamworks_Mac.dylib</arch>
+			</platform>
+
+			<platform type="Linux">
+				<arch type="x86_32">Steamworks_Linux_x86_32.so</arch>
+				<arch type="x86_64">Steamworks_Linux_x86_64.so</arch>
+			</platform>
+
+			<platform type="iOS">
+				<arch type="arm_v6">Steamworks_iOS.a</arch>
+				<arch type="arm_v7">Steamworks_iOS.a</arch>
+			</platform>
+
+			<platform type="Android">
+				<arch type="arm_v5te">Steamworks_Android.a</arch>
+			</platform>
+
+			<platform type="Palm">
+				<arch type="arm_v6">Steamworks_Palm.a</arch>
+			</platform>
+
+			<platform type="BlackBerry">
+				<arch type="arm_v7">Steamworks_BlackBerry.a</arch>
+			</platform>
+
+			<platform type="Flash">
+				<arch type="noarch">Steamworks_Flash.swc</arch>
+			</platform>
+
+			<platform type="Wii">
+				<arch type="ppc_32">Steamworks_Wii.a</arch>
+			</platform>
+
+			<platform type="PS3">
+				<arch type="ppc_32">Steamworks_PS3.a</arch>
+			</platform>
+
+			<platform type="NaCl">
+				<arch type="x86_32">Steamworks_NaCl_x86_32.a</arch>
+				<arch type="x86_64">Steamworks_NaCl_x86_64.a</arch>
+			</platform>
+
+			<platform type="XB360">
+				<arch type="ppc_32">Steamworks_XB360.lib</arch>
+			</platform>
+
+		</files>
+	</plugin>
+</manifest>
