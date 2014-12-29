@@ -13,7 +13,7 @@ PRODUCT_NAME        = Steamworks_Linux_x86_64.so
 
 
 #################################################################
-SOURCES				= Plugin.cpp Steamworks.cpp SteamMain.cpp StatsAndAchievements.cpp Leaderboards.cpp 
+SOURCES				= Plugin.cpp Steamworks.cpp SteamMain.cpp StatsAndAchievements.cpp Leaderboards.cpp CloudAndWorkshop.cpp 
 
 #################################################################
 #  Compiler executables

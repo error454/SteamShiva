@@ -6,10 +6,15 @@
 #include <string> // used for string persistence voodoo
 #include <time.h>
 #if defined(_WIN32)
-#include <direct.h>
+    #include <direct.h>
 #else
-#include <sys/stat.h> //mkdir
+    #include <sys/stat.h> //mkdir
 #endif
+
+#if defined(__linux__)
+    #include <stdlib.h>
+    #include <cstdio>
+ #endif
 
 //-----------------------------------------------------------------------------
 

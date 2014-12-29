@@ -1,5 +1,5 @@
 - Get the Steamworks SDK from https://partner.steamgames.com
-- Extraxt the content into the Plugins\com.shaderman.steamworks\Sources\Steamworks_SDK folder
+- Extract the content into the Plugins\com.shaderman.steamworks\Sources\Steamworks_SDK folder
 
 Windows 32 bit:
 - Copy steam_api.dll from Plugins\com.shaderman.steamworks\Sources\Steamworks_SDK\redistributable_bin to Plugins\com.shaderman.steamworks\Contents\Windows
@@ -16,6 +16,9 @@ Mac 32 bit:
 - Now you can export the project for Mac
 - If you are testing on the Mac and not through steam, after you build the project in the UAT, you'll need to create a steam_appid.txt in the program [Name].App/Contents/MacOS/ folder
 
+Linux:
+For linux you need to copy over the com.shaderman.steamworks folder, you then navigate to the Make/Linux folder and run make on the appropriate makefile from there.
+
 Linux 32 bit:
 * Use the Steamworks.makefile_x86 to build
   make -f Steamworks.makefile_x86
@@ -24,3 +27,7 @@ Linux 32 bit:
 Linux 64 bit:
 * Use the Steamworks.makefile_x64 to build
   make -f Steamworks.makefile_x64
+
+You will find the built linux library in the Contents/Linux folder. Now you need to copy this back to the windows side so you can export the plugin.
+
+Make sure to grab the necessary libsteamapi.so from the *Steamworks_SDK/redistributable_bin*.  

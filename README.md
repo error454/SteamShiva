@@ -110,7 +110,9 @@ Platform Packaging Caveats
 
 Linux
 ----
-You will need to package the `libsteam_api.so` file that is in `Plugins\com.shaderman.steamworks\Contents\Linux` with your game. The easiest way to do this is to place the file in a `libs/` folder in your game root and then set the `LD_LIBRARY_PATH` in a bash file before launching:
+You will need to package the `libsteam_api.so` file that is in `Plugins\com.shaderman.steamworks\Contents\Linux` with your game. Note that this file comes from the Steam SDK, so if you recompile, you'll need to grab the version you compiled with from the *Steamworks_SDK\redistributable_bin\* folder.
+
+The easiest way to do this is to place the file in a `libs/` folder in your game root and then set the `LD_LIBRARY_PATH` in a bash script before launching:
 
     #!/bin/bash
     #Set library path to find libsteam_api.so
