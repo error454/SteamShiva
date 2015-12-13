@@ -43,6 +43,18 @@ public :
 	//-------------------------------------------------------------------------
                                 SteamworksAPI       ( ) 
                                 {
+                                    pfn_Steamworks_sconPulse                          = NULL ;
+                                    pfn_Steamworks_sconShowBindingPanel               = NULL ;
+                                    pfn_Steamworks_sconSetActionSet                   = NULL ;
+                                    pfn_Steamworks_sconGetActionSet                   = NULL ;
+                                    pfn_Steamworks_sconGetDigitalActionOrigin         = NULL ;
+                                    pfn_Steamworks_sconGetAnalogActionOrigin          = NULL ;
+                                    pfn_Steamworks_sconLoop                           = NULL ;
+                                    pfn_Steamworks_sconSetAnalogActions               = NULL ;
+                                    pfn_Steamworks_sconSetDigitalActions              = NULL ;
+                                    pfn_Steamworks_sconSetActionSets                  = NULL ;
+                                    pfn_Steamworks_sconGetConnectedControllers        = NULL ;
+									pfn_Steamworks_IsDlcInstalled                     = NULL ;
                                     pfn_Steamworks_GetServerTime                      = NULL ;
                                     pfn_Steamworks_SubmitOrCreateScore                = NULL ;
                                     pfn_Steamworks_OpenItemInBrowser                  = NULL ;
@@ -88,6 +100,18 @@ public :
 	//  API Callbacks 
 	//-------------------------------------------------------------------------
 
+    S3DX::AICallback        pfn_Steamworks_sconPulse ;
+    S3DX::AICallback        pfn_Steamworks_sconShowBindingPanel ;
+    S3DX::AICallback        pfn_Steamworks_sconSetActionSet ;
+    S3DX::AICallback        pfn_Steamworks_sconGetActionSet ;
+    S3DX::AICallback        pfn_Steamworks_sconGetDigitalActionOrigin ;
+    S3DX::AICallback        pfn_Steamworks_sconGetAnalogActionOrigin ;
+    S3DX::AICallback        pfn_Steamworks_sconLoop ;
+    S3DX::AICallback        pfn_Steamworks_sconSetAnalogActions ;
+    S3DX::AICallback        pfn_Steamworks_sconSetDigitalActions ;
+    S3DX::AICallback        pfn_Steamworks_sconSetActionSets ;
+    S3DX::AICallback        pfn_Steamworks_sconGetConnectedControllers ;
+	S3DX::AICallback        pfn_Steamworks_IsDlcInstalled ;
     S3DX::AICallback        pfn_Steamworks_GetServerTime ;
     S3DX::AICallback        pfn_Steamworks_SubmitOrCreateScore ;
     S3DX::AICallback        pfn_Steamworks_OpenItemInBrowser ;
@@ -131,7 +155,19 @@ public :
 	//  API Functions 
 	//-------------------------------------------------------------------------
 
-    inline S3DX::AIVariable     GetServerTime                      (  ) { S3DX::AIVariable vOut ; if ( pfn_Steamworks_GetServerTime ) pfn_Steamworks_GetServerTime ( 0, NULL, &vOut ); return vOut ; }
+    inline void                 sconPulse                          ( const S3DX::AIVariable& sControllerID, const S3DX::AIVariable& SteamworkskPad, const S3DX::AIVariable& nDurationMicroSecs ) { S3DX_DECLARE_VIN_03( sControllerID, SteamworkskPad, nDurationMicroSecs ) ; if ( pfn_Steamworks_sconPulse ) pfn_Steamworks_sconPulse ( 3, vIn, NULL );  }
+    inline S3DX::AIVariable     sconShowBindingPanel               ( const S3DX::AIVariable& sControntrollerID ) { S3DX_DECLARE_VIN_01( sControntrollerID ) ; S3DX::AIVariable vOut ; if ( pfn_Steamworks_sconShowBindingPanel ) pfn_Steamworks_sconShowBindingPanel ( 1, vIn, &vOut ); return vOut ; }
+    inline void                 sconSetActionSet                   ( const S3DX::AIVariable& sControllerID, const S3DX::AIVariable& sActionSetName ) { S3DX_DECLARE_VIN_02( sControllerID, sActionSetName ) ; if ( pfn_Steamworks_sconSetActionSet ) pfn_Steamworks_sconSetActionSet ( 2, vIn, NULL );  }
+    inline S3DX::AIVariable     sconGetActionSet                   ( const S3DX::AIVariable& sControllerID ) { S3DX_DECLARE_VIN_01( sControllerID ) ; S3DX::AIVariable vOut ; if ( pfn_Steamworks_sconGetActionSet ) pfn_Steamworks_sconGetActionSet ( 1, vIn, &vOut ); return vOut ; }
+    inline S3DX::AIVariable     sconGetDigitalActionOrigin         ( const S3DX::AIVariable& sControllerID, const S3DX::AIVariable& sActionSetName, const S3DX::AIVariable& sAction ) { S3DX_DECLARE_VIN_03( sControllerID, sActionSetName, sAction ) ; S3DX::AIVariable vOut ; if ( pfn_Steamworks_sconGetDigitalActionOrigin ) pfn_Steamworks_sconGetDigitalActionOrigin ( 3, vIn, &vOut ); return vOut ; }
+    inline S3DX::AIVariable     sconGetAnalogActionOrigin          ( const S3DX::AIVariable& sControllerID, const S3DX::AIVariable& sActionSetName, const S3DX::AIVariable& sAction ) { S3DX_DECLARE_VIN_03( sControllerID, sActionSetName, sAction ) ; S3DX::AIVariable vOut ; if ( pfn_Steamworks_sconGetAnalogActionOrigin ) pfn_Steamworks_sconGetAnalogActionOrigin ( 3, vIn, &vOut ); return vOut ; }
+    inline void                 sconLoop                           (  ) { if ( pfn_Steamworks_sconLoop ) pfn_Steamworks_sconLoop ( 0, NULL, NULL );  }
+    inline S3DX::AIVariable     sconSetAnalogActions               ( const S3DX::AIVariable& sActionCSV ) { S3DX_DECLARE_VIN_01( sActionCSV ) ; S3DX::AIVariable vOut ; if ( pfn_Steamworks_sconSetAnalogActions ) pfn_Steamworks_sconSetAnalogActions ( 1, vIn, &vOut ); return vOut ; }
+    inline S3DX::AIVariable     sconSetDigitalActions              ( const S3DX::AIVariable& sActionCSV ) { S3DX_DECLARE_VIN_01( sActionCSV ) ; S3DX::AIVariable vOut ; if ( pfn_Steamworks_sconSetDigitalActions ) pfn_Steamworks_sconSetDigitalActions ( 1, vIn, &vOut ); return vOut ; }
+    inline S3DX::AIVariable     sconSetActionSets                  ( const S3DX::AIVariable& sActionCSV ) { S3DX_DECLARE_VIN_01( sActionCSV ) ; S3DX::AIVariable vOut ; if ( pfn_Steamworks_sconSetActionSets ) pfn_Steamworks_sconSetActionSets ( 1, vIn, &vOut ); return vOut ; }
+    inline S3DX::AIVariable     sconGetConnectedControllers        (  ) { S3DX::AIVariable vOut ; if ( pfn_Steamworks_sconGetConnectedControllers ) pfn_Steamworks_sconGetConnectedControllers ( 0, NULL, &vOut ); return vOut ; }
+    inline S3DX::AIVariable     IsDlcInstalled                     ( const S3DX::AIVariable& sAppId ) { S3DX_DECLARE_VIN_01( sAppId ) ; S3DX::AIVariable vOut ; if ( pfn_Steamworks_IsDlcInstalled ) pfn_Steamworks_IsDlcInstalled ( 1, vIn, &vOut ); return vOut ; }
+	inline S3DX::AIVariable     GetServerTime                      (  ) { S3DX::AIVariable vOut ; if ( pfn_Steamworks_GetServerTime ) pfn_Steamworks_GetServerTime ( 0, NULL, &vOut ); return vOut ; }
     inline void                 SubmitOrCreateScore                ( const S3DX::AIVariable& sLeaderboard, const S3DX::AIVariable& nScore ) { S3DX_DECLARE_VIN_02( sLeaderboard, nScore ) ; if ( pfn_Steamworks_SubmitOrCreateScore ) pfn_Steamworks_SubmitOrCreateScore ( 2, vIn, NULL );  }
     inline void                 OpenItemInBrowser                  ( const S3DX::AIVariable& sWorkshopItemID ) { S3DX_DECLARE_VIN_01( sWorkshopItemID ) ; if ( pfn_Steamworks_OpenItemInBrowser ) pfn_Steamworks_OpenItemInBrowser ( 1, vIn, NULL );  }
     inline void                 MakeDir                            ( const S3DX::AIVariable& sFullPath ) { S3DX_DECLARE_VIN_01( sFullPath ) ; if ( pfn_Steamworks_MakeDir ) pfn_Steamworks_MakeDir ( 1, vIn, NULL );  }
@@ -174,6 +210,58 @@ public :
 	//  API Constants 
 	//-------------------------------------------------------------------------
 
+    S3DX::AIVariable kSconLeftPad ; 
+    S3DX::AIVariable kSconRightPad ; 
+    S3DX::AIVariable kSconAnalogSourceModeNone ; 
+    S3DX::AIVariable kSconAnalogSourceModeDpad ; 
+    S3DX::AIVariable kSconAnalogSourceModeButtons ; 
+    S3DX::AIVariable kSconAnalogSourceModeFourButtons ; 
+    S3DX::AIVariable kSconAnalogSourceModeAbsoluteMouse ; 
+    S3DX::AIVariable kSconAnalogSourceModeRelativeMouse ; 
+    S3DX::AIVariable kSconAnalogSourceModeJoystickMove ; 
+    S3DX::AIVariable kSconAnalogSourceModeJoystickCamera ; 
+    S3DX::AIVariable kSconAnalogSourceModeScrollWheel ; 
+    S3DX::AIVariable kSconAnalogSourceModeTrigger ; 
+    S3DX::AIVariable kSconAnalogSourceModeTouchMenu ; 
+    S3DX::AIVariable kSconButtonNone ; 
+    S3DX::AIVariable kSconButtonA ; 
+    S3DX::AIVariable kSconButtonB ; 
+    S3DX::AIVariable kSconButtonX ; 
+    S3DX::AIVariable kSconButtonY ; 
+    S3DX::AIVariable kSconBumperLeft ; 
+    S3DX::AIVariable kSconBumperRight ; 
+    S3DX::AIVariable kSconGripLeft ; 
+    S3DX::AIVariable kSconGripRight ; 
+    S3DX::AIVariable kSconButtonStart ; 
+    S3DX::AIVariable kSconButtonBack ; 
+    S3DX::AIVariable kSconPadLeftTouch ; 
+    S3DX::AIVariable kSconPadLeftSwipe ; 
+    S3DX::AIVariable kSconPadLeftClick ; 
+    S3DX::AIVariable kSconPadLeftDPadUp ; 
+    S3DX::AIVariable kSconPadLeftDPadDown ; 
+    S3DX::AIVariable kSconPadLeftDPadLeft ; 
+    S3DX::AIVariable kSconPadLeftDPadRight ; 
+    S3DX::AIVariable kSconPadRightTouch ; 
+    S3DX::AIVariable kSconPadRightSwipe ; 
+    S3DX::AIVariable kSconPadRightClick ; 
+    S3DX::AIVariable kSconPadRightDPadUp ; 
+    S3DX::AIVariable kSconPadRightDPadDown ; 
+    S3DX::AIVariable kSconPadRightDPadLeft ; 
+    S3DX::AIVariable kSconPadRightDPadRight ; 
+    S3DX::AIVariable kSconTriggerLeftPull ; 
+    S3DX::AIVariable kSconTriggerLeftClick ; 
+    S3DX::AIVariable kSconTriggerRightPull ; 
+    S3DX::AIVariable kSconTriggerRightClick ; 
+    S3DX::AIVariable kSconStickLeftMove ; 
+    S3DX::AIVariable kSconStickLeftClick ; 
+    S3DX::AIVariable kSconStickLeftUp ; 
+    S3DX::AIVariable kSconStickLeftDown ; 
+    S3DX::AIVariable kSconStickLeftLeft ; 
+    S3DX::AIVariable kSconStickLeftRight ; 
+    S3DX::AIVariable kSconGyroMove ; 
+    S3DX::AIVariable kSconGyroPitch ; 
+    S3DX::AIVariable kSconGyroYaw ; 
+    S3DX::AIVariable kSconGyroRoll ; 
     S3DX::AIVariable kLeaderboardRequestGlobal ; 
     S3DX::AIVariable kLeaderboardRequestGlobalAroundUser ; 
     S3DX::AIVariable kLeaderboardRequestFriends ; 

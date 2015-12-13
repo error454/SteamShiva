@@ -11,6 +11,9 @@ function Steam.onInit (  )
     this.achievementsInit ( )
     this.statsInit ( )
 	local bSuccess = Steamworks.Init ( "Steam" )
+    
+    -- new in 1.35: STEAM controller support
+    this.initSteamController ( )
 
     if bSuccess then
         if this.bDebug ( ) then

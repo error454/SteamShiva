@@ -3,7 +3,6 @@
 #define __StatsAndAchievements_h__
 //-----------------------------------------------------------------------------
 
-#include "steam_api.h"
 #include <utility> // std::pair
 #include <string>
 

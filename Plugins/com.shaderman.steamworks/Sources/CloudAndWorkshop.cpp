@@ -2,8 +2,8 @@
 #include "CloudAndWorkshop.h"
 #include "steam_api.h"
 #include "Steamworks.h"
-#include "ISteamRemoteStorage.h"
-#include "ISteamUGC.h"
+#include "isteamremotestorage.h"
+#include "isteamugc.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>

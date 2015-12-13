@@ -3,10 +3,16 @@
 #define __SteamMain_h__
 //-----------------------------------------------------------------------------
 
+// include API
+#include "steam_api.h"
+
+// include "modules"
 #include "StatsAndAchievements.h"
 #include "Leaderboards.h"
-#include "steam_api.h"
 #include "CloudAndWorkshop.h"
+#include "Dlc.h" //karmakallio
+#include "SteamController.h" //1.35
+
 
 // Main class for initialisation, shutdown, error handling/logging and so on
 class CSteamMain
@@ -27,6 +33,8 @@ public:
 	CStatsAndAchievements *m_pStatsAndAchievements;
 	CSteamLeaderboards *m_pLeaderboards;
 	CCloudAndWorkshop *m_pCloudAndWorkshop;
+	CSteamDlc *m_pDlc;
+	CSteamCon *m_pSteamCon;
 
 private:
 	// The AI model where callbacks are sent

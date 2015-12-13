@@ -14,6 +14,8 @@
 		800000020E9AC9E700239362 /* StatsAndAchievements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800010030E9AC9E700239362 /* StatsAndAchievements.cpp */; };
 		800000030E9AC9E700239362 /* SteamMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800010050E9AC9E700239362 /* SteamMain.cpp */; };
 		800000040E9AC9E700239362 /* Steamworks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 800010070E9AC9E700239362 /* Steamworks.cpp */; };
+		C9CFAEC61C1C7E27001FED63 /* SteamController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9CFAEC41C1C7E27001FED63 /* SteamController.cpp */; };
+		C9CFAEC91C1C7E43001FED63 /* Dlc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9CFAEC71C1C7E43001FED63 /* Dlc.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,10 +192,10 @@
 		43099EF119169829006B2EB4 /* drmtool.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = drmtool.exe; sourceTree = "<group>"; };
 		43099EF219169829006B2EB4 /* drmtoolp.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = drmtoolp.exe; sourceTree = "<group>"; };
 		43099EF319169829006B2EB4 /* Readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
-		43099EF519169829006B2EB4 /* drmtoolp */ = {isa = PBXFileReference; lastKnownFileType = file; path = drmtoolp; sourceTree = "<group>"; };
+		43099EF519169829006B2EB4 /* drmtoolp */ = {isa = PBXFileReference; lastKnownFileType = text; path = drmtoolp; sourceTree = "<group>"; };
 		43099EF619169829006B2EB4 /* drmunpackp.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = drmunpackp.so; sourceTree = "<group>"; };
 		43099EF719169829006B2EB4 /* steamdrmp.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = steamdrmp.so; sourceTree = "<group>"; };
-		43099EF919169829006B2EB4 /* drmtoolp */ = {isa = PBXFileReference; lastKnownFileType = file; path = drmtoolp; sourceTree = "<group>"; };
+		43099EF919169829006B2EB4 /* drmtoolp */ = {isa = PBXFileReference; lastKnownFileType = text; path = drmtoolp; sourceTree = "<group>"; };
 		43099EFA19169829006B2EB4 /* drmunpackp.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = drmunpackp.so; sourceTree = "<group>"; };
 		43099EFB19169829006B2EB4 /* steamdrmp.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = steamdrmp.so; sourceTree = "<group>"; };
 		43099EFE19169829006B2EB4 /* autorun.inf */ = {isa = PBXFileReference; lastKnownFileType = text; path = autorun.inf; sourceTree = "<group>"; };
@@ -358,6 +360,10 @@
 		800010060E9AC9E700239362 /* SteamMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SteamMain.h; path = ../../Sources/SteamMain.h; sourceTree = SOURCE_ROOT; };
 		800010070E9AC9E700239362 /* Steamworks.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Steamworks.cpp; path = ../../Sources/Steamworks.cpp; sourceTree = SOURCE_ROOT; };
 		800010080E9AC9E700239362 /* Steamworks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Steamworks.h; path = ../../Sources/Steamworks.h; sourceTree = SOURCE_ROOT; };
+		C9CFAEC41C1C7E27001FED63 /* SteamController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SteamController.cpp; sourceTree = "<group>"; };
+		C9CFAEC51C1C7E27001FED63 /* SteamController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SteamController.h; sourceTree = "<group>"; };
+		C9CFAEC71C1C7E43001FED63 /* Dlc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dlc.cpp; sourceTree = "<group>"; };
+		C9CFAEC81C1C7E43001FED63 /* Dlc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dlc.h; sourceTree = "<group>"; };
 		D2AAC09D05546B4700DB518D /* Steamworks_Mac.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = Steamworks_Mac.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -405,6 +411,10 @@
 		08FB77ACFE841707C02AAC07 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C9CFAEC71C1C7E43001FED63 /* Dlc.cpp */,
+				C9CFAEC81C1C7E43001FED63 /* Dlc.h */,
+				C9CFAEC41C1C7E27001FED63 /* SteamController.cpp */,
+				C9CFAEC51C1C7E27001FED63 /* SteamController.h */,
 				800010080E9AC9E700239362 /* Steamworks.h */,
 				800010070E9AC9E700239362 /* Steamworks.cpp */,
 				800010060E9AC9E700239362 /* SteamMain.h */,
@@ -1463,7 +1473,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0620;
 			};
 			buildConfigurationList = 1DEB916408733D950010E9CD /* Build configuration list for PBXProject "Steamworks" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1513,8 +1523,10 @@
 				800000040E9AC9E700239362 /* Steamworks.cpp in Sources */,
 				800000030E9AC9E700239362 /* SteamMain.cpp in Sources */,
 				800000020E9AC9E700239362 /* StatsAndAchievements.cpp in Sources */,
+				C9CFAEC91C1C7E43001FED63 /* Dlc.cpp in Sources */,
 				800000010E9AC9E700239362 /* Leaderboards.cpp in Sources */,
 				720E47531251383000BC6A74 /* Plugin.cpp in Sources */,
+				C9CFAEC61C1C7E27001FED63 /* SteamController.cpp in Sources */,
 				43574FA4194A726E008EDD5E /* CloudAndWorkshop.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1560,8 +1572,13 @@
 		1DEB916508733D950010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CONFIGURATION_BUILD_DIR = ../../Contents/Mac/;
+				CURRENT_PROJECT_VERSION = 1.35;
+				DEAD_CODE_STRIPPING = YES;
+				DYLIB_CURRENT_VERSION = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1570,19 +1587,32 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				SDKROOT = macosx;
+				LIBRARY_SEARCH_PATHS = (
+					../../Sources/Steamworks_SDK/redistributable_bin/osx32,
+					../../Sources/Steamworks_SDK/public/steam/lib/osx32,
+				);
+				LINKER_DISPLAYS_MANGLED_NAMES = YES;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx10.9;
+				SKIP_INSTALL = YES;
 				SYMROOT = ../../Temp/Mac;
-				USER_HEADER_SEARCH_PATHS = ../../Sources/;
-				VALID_ARCHS = i386;
+				USER_HEADER_SEARCH_PATHS = "../../Sources/ ../../Sources/Steamworks_SDK/public/steam/**";
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
 		};
 		1DEB916608733D950010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CONFIGURATION_BUILD_DIR = ../../Contents/Mac/;
+				CURRENT_PROJECT_VERSION = 1.35;
+				DEAD_CODE_STRIPPING = YES;
+				DYLIB_CURRENT_VERSION = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1591,11 +1621,19 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				SDKROOT = macosx;
+				LIBRARY_SEARCH_PATHS = (
+					../../Sources/Steamworks_SDK/redistributable_bin/osx32,
+					../../Sources/Steamworks_SDK/public/steam/lib/osx32,
+				);
+				LINKER_DISPLAYS_MANGLED_NAMES = YES;
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx10.9;
+				SKIP_INSTALL = YES;
 				SYMROOT = ../../Temp/Mac;
-				USER_HEADER_SEARCH_PATHS = ../../Sources/;
-				VALID_ARCHS = i386;
+				USER_HEADER_SEARCH_PATHS = "../../Sources/ ../../Sources/Steamworks_SDK/public/steam/**";
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
 		};

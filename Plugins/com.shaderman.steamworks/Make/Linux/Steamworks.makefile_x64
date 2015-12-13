@@ -3,6 +3,13 @@
 #
 #   Whipped into shape by Zachary Burke
 #
+#	thanks zach! added karma's DLC and my SteamController 
+#	and recompiled on debain 8.2 on 2015-12-12 /broozar
+#
+#	also, the c++11 flag is now mandatory
+#	and x86 support has been cancelled...
+#	...because SteamOS is 64 bit anyway
+#
 #################################################################
 
 TEMP_DIR       		= ../../Temp/Linux
@@ -13,7 +20,7 @@ PRODUCT_NAME        = Steamworks_Linux_x86_64.so
 
 
 #################################################################
-SOURCES				= Plugin.cpp Steamworks.cpp SteamMain.cpp StatsAndAchievements.cpp Leaderboards.cpp CloudAndWorkshop.cpp 
+SOURCES				= Plugin.cpp Steamworks.cpp SteamMain.cpp StatsAndAchievements.cpp Leaderboards.cpp CloudAndWorkshop.cpp Dlc.cpp SteamController.cpp
 
 #################################################################
 #  Compiler executables
@@ -26,7 +33,7 @@ LD				= $(CPP)
 #  Compiler flags
 #
 CFLAGS      		= -I../../Sources/Steamworks_SDK/public/steam -Os -Wno-unknown-pragmas -fsigned-char -fno-exceptions -DS3DX_DLL -D__LINUX__ -D_GNU_SOURCE -DHAVE_STDINT_H -I$(SRCROOT)/Linux -I$(S3DXROOT) -fPIC
-CPPFLAGS    		= 
+CPPFLAGS    		= -std=c++11
 LDFLAGS			= -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L../../Sources/Steamworks_SDK/redistributable_bin/linux64 -lsteam_api
 
 ####################################################################"
