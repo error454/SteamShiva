@@ -104,16 +104,19 @@ The remaining workshop stuff, well, I'm too lazy to document it right now, it wo
 
 ## DLC Stuff ##
 1. in the Steam.dlcInit ( ) Lua function, declare your DLC:
-
-	htAdd ( ht, "MyDlcName", 123456 )  -- where 123456 is the Dlc Id
+```
+htAdd ( ht, "MyDlcName", 123456 )  -- where 123456 is the Dlc Id
+```
 
 2. check for Dlc by calling :
-
-	user.sendEventImmediate ( hUser, "Steam", "onDlcItemConfirmation", "123456" )
+```
+user.sendEventImmediate ( hUser, "Steam", "onDlcItemConfirmation", "123456" )
+```
 
 3. optionally, you can pass an environment variable, and the function will save the boolean value to it
-
-	user.sendEventImmediate ( hUser, "Steam", "onDlcItemConfirmation", "123456", "my_boolean_env_variable" )
+```
+user.sendEventImmediate ( hUser, "Steam", "onDlcItemConfirmation", "123456", "my_boolean_env_variable" )
+```
 
 Note that a user may switch Dlc on and off in their game control panel in Steam, so the status should always be checked on launch.
 
@@ -136,52 +139,57 @@ Feel free to use the steamcon_ icons in the project, they are just renamed versi
 1. Add your digital, analog and action set strings to the Steam.scon_* AIModel member variables, or open the function Steam.initSCon() and add them there if you like text editing better.
 
 ## Using the Steam Controller in ShiVa ##
-1. All connected controllers will be written automatically into the table Steam.tSconIDs. It will be updated every frame and deletes/adds (dis)connected controllers for you.
-2. Before you can receive any input, you must tell a controller which actionSet you are using, for instance:
-
-	Steamworks.sconSetActionSet( table.getFirst (this.tSconIDs ( )), "ship_controls" )
+- All connected controllers will be written automatically into the table Steam.tSconIDs. It will be updated every frame and deletes/adds (dis)connected controllers for you.
+- Before you can receive any input, you must tell a controller which actionSet you are using, for instance:
+```
+Steamworks.sconSetActionSet( table.getFirst (this.tSconIDs ( )), "ship_controls" )
+```
 
 Only call this one after you can be sure that the controller has been initialized, e.g. at the beginning of your main menu level, NOT in the init() function as the controller needs a couple of frames to register.
 	
-3. You can now receive Digital and Analog actions from the controller. There are 3 new handlers for that:
+- You can now receive Digital and Analog actions from the controller. There are 3 new handlers for that:
+```
+Steam.onSconDigitalActionOn ( sControllerID, sAction, sActionSet, kSource )
+Steam.onSconDigitalActionOff ( sControllerID, sAction, sActionSet, kSource )
+Steam.onSconAnalogActionContinuous ( sControllerID, sAction, sActionSet, nX, nY, kSource, kSourceMode )
+```
 
-	Steam.onSconDigitalActionOn ( sControllerID, sAction, sActionSet, kSource )
-	Steam.onSconDigitalActionOff ( sControllerID, sAction, sActionSet, kSource )
-	Steam.onSconAnalogActionContinuous ( sControllerID, sAction, sActionSet, nX, nY, kSource, kSourceMode )
-	
-4. DigitalActionOn and DigitalActionOff behave very much like onJoytickButtonUp/Down - thesy are events that only fire when something happens. sControllerID is the string representation of the UINT64 controller ID that is stored in tSconIDs which can be used to identify controllers. sAction and sActionSet are the action name/actionset name that belong to the event tat fired.
-5. kSource is a number that can be interpreted by the table tSconActionOrigins, for instance:
+- DigitalActionOn and DigitalActionOff behave very much like onJoytickButtonUp/Down - thesy are events that only fire when something happens. sControllerID is the string representation of the UINT64 controller ID that is stored in tSconIDs which can be used to identify controllers. sAction and sActionSet are the action name/actionset name that belong to the event tat fired.
+- kSource is a number that can be interpreted by the table tSconActionOrigins, for instance:
+```
+table.getAt ( this.tSconActionOrigins ( ), kSource )
+```
 
-	table.getAt ( this.tSconActionOrigins ( ), kSource )
-	
-6. AnalogActionContinuous fires every frame no matter what, and thus behaves more like a regular function. nX and nY are the numbers that come back from e.g. the right touchpad. However, those numbers are also highly dependent on kSourceMode:
-7. kSourceMode is a number that tells you where the analog action originated from and how nX and nY have to be handled. kSourceMode can be interpreted by the table this.tSconSourceModes, for instance:
+- AnalogActionContinuous fires every frame no matter what, and thus behaves more like a regular function. nX and nY are the numbers that come back from e.g. the right touchpad. However, those numbers are also highly dependent on kSourceMode:
+- kSourceMode is a number that tells you where the analog action originated from and how nX and nY have to be handled. kSourceMode can be interpreted by the table this.tSconSourceModes, for instance:
+```
+table.getAt ( this.tSconSourceModes ( ), kSourceMode )
+```
 
-	table.getAt ( this.tSconSourceModes ( ), kSourceMode )
+- All buttons and analog inputs furthermore have a constant equivalent, for instance:
+```
+Steamworks.kSconButtonA
+Steamworks.kSconButtonB
+Steamworks.kSconButtonX
+Steamworks.kSconButtonY
+```
 
-8. All buttons and analog inputs furthermore have a constant equivalent, for instance:
+- All source modes furthermore have a constant equivalent, for instance:
+```
+Steamworks.kSconAnalogSourceModeRelativeMouse
+Steamworks.kSconAnalogSourceModeJoystickMove
+```
 
-	Steamworks.kSconButtonA
-	Steamworks.kSconButtonB
-	Steamworks.kSconButtonX
-	Steamworks.kSconButtonY
-
-9. All source modes furthermore have a constant equivalent, for instance:
-
-	Steamworks.kSconAnalogSourceModeRelativeMouse
-	Steamworks.kSconAnalogSourceModeJoystickMove
-	
-10. Other useful functions:
-
-	sconGetConnectedControllers -- returns the number of currently connected controllers
-	sconGetAnalogActionOrigin -- returns the kOrigin constant of a given analog action
-	sconGetDigitalActionOrigin -- returns the kOrigin constant of a given digital action
-	sconGetActionSet -- returns the current action set name for a given controller
-	sconShowBindingPanel -- accesses the binding config panel for a given controller, only works in Big Picture Mode
-	Steamworks.sconPulse -- sends a haptic feedback pulse to a given controller pad. Durations under 200 are barely noticable, durations over 800 do not seem to make the effect any more pronounced. Try 500, like so:
-	
-	Steamworks.sconPulse( table.getFirst ( this.tSconIDs ( ) ), Steamworks.kSconRightPad, 500 )
-	
+###Other useful functions:###
+- sconGetConnectedControllers -- returns the number of currently connected controllers
+- sconGetAnalogActionOrigin -- returns the kOrigin constant of a given analog action
+- sconGetDigitalActionOrigin -- returns the kOrigin constant of a given digital action
+- sconGetActionSet -- returns the current action set name for a given controller
+- sconShowBindingPanel -- accesses the binding config panel for a given controller, only works in Big Picture Mode
+- Steamworks.sconPulse -- sends a haptic feedback pulse to a given controller pad. Durations under 200 are barely noticable, durations over 800 do not seem to make the effect any more pronounced. Try 500, like so:
+```
+Steamworks.sconPulse( table.getFirst ( this.tSconIDs ( ) ), Steamworks.kSconRightPad, 500 )
+```	
 	
 
 # Misc Functions and Callbacks #
