@@ -91,6 +91,12 @@
     <ClCompile Include="..\..\Sources\CloudAndWorkshop.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Sources\SteamController.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Dlc.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Sources\S3DX\S3DXAIConstant.h">
@@ -187,6 +193,12 @@
       <Filter>Sources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Sources\CloudAndWorkshop.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\SteamController.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Dlc.h">
       <Filter>Sources</Filter>
     </ClInclude>
   </ItemGroup>

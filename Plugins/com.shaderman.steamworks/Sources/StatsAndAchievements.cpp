@@ -1,6 +1,8 @@
 #include "PrecompiledHeader.h"
+
+#include "steam_api.h"
 #include "StatsAndAchievements.h"
-#include "Steamworks.h" // access Steamworks.kStatType*
+
 
 // The constructor :o
 CStatsAndAchievements::CStatsAndAchievements(const char* sAIModel) :

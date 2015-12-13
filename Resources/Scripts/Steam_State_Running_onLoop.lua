@@ -9,6 +9,10 @@ function Steam.Running_onLoop ( )
 --------------------------------------------------------------------------------
 	
 	Steamworks.RunCallbacks ( )
+    
+    if this.bSconRequested ( ) == true then
+        Steamworks.sconLoop ( )
+    end
 	
 --------------------------------------------------------------------------------
 end

@@ -1,0 +1,23 @@
+﻿Build started 13/12/2015 16:40:11.
+     1>Project "D:\ShiVaProjects\steamWorksZachBurke\Plugins\com.shaderman.steamworks\Make\Windows\Steamworks.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I../../Sources/ /I../../Sources/S3DX/ /I../../Sources/Windows/ /I../../Sources/Steamworks_SDK/public/steam/ /Zi /nologo /W3 /WX- /Ox /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D _CRT_SECURE_NO_WARNINGS /D S3DX_DLL /D _VC80_UPGRADE=0x0710 /D _WINDLL /D _MBCS /GF /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"PrecompiledHeader.h" /Fp"..\..\Temp\Windows\Release\Steamworks_Windows.pch" /Fo"..\..\Temp\Windows\Release\\" /Fd"..\..\Temp\Windows\Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Sources\SteamController.cpp
+         SteamController.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Contents\Windows\Steamworks_Windows.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:../../Sources/Steamworks_SDK/redistributable_bin/ steam_api.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"..\..\Temp\Windows\Release\Steamworks_Windows.lib" /MACHINE:X86 /SAFESEH /DLL ..\..\Temp\Windows\Release\CloudAndWorkshop.obj
+         ..\..\Temp\Windows\Release\Dlc.obj
+         ..\..\Temp\Windows\Release\Leaderboards.obj
+         ..\..\Temp\Windows\Release\StatsAndAchievements.obj
+         ..\..\Temp\Windows\Release\SteamController.obj
+         ..\..\Temp\Windows\Release\SteamMain.obj
+         ..\..\Temp\Windows\Release\Steamworks.obj
+         ..\..\Temp\Windows\Release\Plugin.obj
+         ..\..\Temp\Windows\Release\DLLMain.obj
+         ..\..\Temp\Windows\Release\PrecompiledHeader.obj
+            Creating library ..\..\Temp\Windows\Release\Steamworks_Windows.lib and object ..\..\Temp\Windows\Release\Steamworks_Windows.exp
+         Steamworks.vcxproj -> D:\ShiVaProjects\steamWorksZachBurke\Plugins\com.shaderman.steamworks\Make\Windows\..\..\Contents\Windows\Steamworks_Windows.dll
+     1>Done Building Project "D:\ShiVaProjects\steamWorksZachBurke\Plugins\com.shaderman.steamworks\Make\Windows\Steamworks.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.42

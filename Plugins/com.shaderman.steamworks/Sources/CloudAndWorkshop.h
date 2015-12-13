@@ -1,9 +1,9 @@
 #ifndef __CloudAndWorkshop_h__
 #define __CloudAndWorkshop_h__
 
-#include "ISteamRemoteStorage.h"
+#include "isteamremotestorage.h"
 #include "steam_api.h"
-#include "ISteamUGC.h"
+#include "isteamugc.h"
 #include <string>
 
 class CCloudAndWorkshop

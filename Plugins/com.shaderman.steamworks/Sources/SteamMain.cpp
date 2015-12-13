@@ -1,8 +1,7 @@
 #include "PrecompiledHeader.h"
-#include "SteamMain.h"
 
 #include "steam_api.h"
-
+#include "SteamMain.h"
 
 //-----------------------------------------------------------------------------
 // Generic API stuff
@@ -30,6 +29,8 @@ bool CSteamMain::Init(const char* sAIModel)
 				m_pStatsAndAchievements = new CStatsAndAchievements(sAIModel);
 				m_pLeaderboards = new CSteamLeaderboards(sAIModel);
 				m_pCloudAndWorkshop = new CCloudAndWorkshop(sAIModel);
+				m_pDlc = new CSteamDlc(sAIModel);
+				m_pSteamCon = new CSteamCon(sAIModel);
 				
 				m_sAIModel = sAIModel;
 				bInitialised = true;
@@ -42,6 +43,8 @@ bool CSteamMain::Init(const char* sAIModel)
 // Shutdown Steamworks
 void CSteamMain::Shutdown()
 {
+	if ( !bInitialised ) return;
+	S3DX::log.message("Shutting down STEAM connection...");
 	SteamAPI_Shutdown();
 
 	if ( m_pStatsAndAchievements )
@@ -52,6 +55,12 @@ void CSteamMain::Shutdown()
 
 	if ( m_pCloudAndWorkshop )
 		delete m_pCloudAndWorkshop;
+
+	if ( m_pDlc )
+		delete m_pDlc;
+
+	if ( m_pSteamCon )
+		delete m_pSteamCon;
 }
 
 // Fire callbacks

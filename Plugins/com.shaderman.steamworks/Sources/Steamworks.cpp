@@ -1,10 +1,18 @@
 //-----------------------------------------------------------------------------
 #include "PrecompiledHeader.h"
-#include "Steamworks.h"
+
+// steam API
 #include "steam_api.h"
 #include "SteamMain.h"
+
+// script's own header
+#include "Steamworks.h"
+
+// helpers
 #include <string> // used for string persistence voodoo
 #include <time.h>
+#include <sstream>
+
 #if defined(_WIN32)
     #include <direct.h>
 #else
@@ -16,8 +24,8 @@
     #include <cstdio>
  #endif
 
-//-----------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------
 
 #ifdef S3DX_DLL
 	SteamworksAPI Steamworks ;
@@ -27,6 +35,280 @@ CSteamMain* SM;
 
 //-----------------------------------------------------------------------------
 //  Callbacks
+//-----------------------------------------------------------------------------
+
+int Callback_Steamworks_sconPulse ( int _iInCount, const S3DX::AIVariable *_pIn, S3DX::AIVariable *_pOut )
+{
+    S3DX_API_PROFILING_START( "Steamworks.sconPulse" ) ;
+
+    // Input Parameters 
+    int iInputCount = 0 ;
+    S3DX::AIVariable sControllerID      = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+    S3DX::AIVariable SteamworkskPad     = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+    S3DX::AIVariable nDurationMicroSecs = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+
+	SM->m_pSteamCon->hapticFeedback( sControllerID.GetStringValue(), SteamworkskPad.GetNumberValue(), nDurationMicroSecs.GetNumberValue() );
+
+    S3DX_API_PROFILING_STOP( ) ;
+    return 0;
+}
+
+//-----------------------------------------------------------------------------
+
+int Callback_Steamworks_sconShowBindingPanel ( int _iInCount, const S3DX::AIVariable *_pIn, S3DX::AIVariable *_pOut )
+{
+    S3DX_API_PROFILING_START( "Steamworks.sconShowBindingPanel" ) ;
+
+    // Input Parameters 
+    int iInputCount = 0 ;
+    S3DX::AIVariable sControntrollerID = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+
+    // Output Parameters 
+    S3DX::AIVariable bOK ;
+
+	bOK.SetBooleanValue( SM->m_pSteamCon->showRebindPanel(sControntrollerID.GetStringValue()) );
+
+    // Return output Parameters 
+    int iReturnCount = 0 ;
+    _pOut[iReturnCount++] = bOK ;
+
+    S3DX_API_PROFILING_STOP( ) ;
+    return iReturnCount;
+}
+
+//-----------------------------------------------------------------------------
+
+int Callback_Steamworks_sconSetActionSet ( int _iInCount, const S3DX::AIVariable *_pIn, S3DX::AIVariable *_pOut )
+{
+    S3DX_API_PROFILING_START( "Steamworks.sconSetActionSet" ) ;
+
+    // Input Parameters 
+    int iInputCount = 0 ;
+    S3DX::AIVariable sControllerID  = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+    S3DX::AIVariable sActionSetName = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+
+	SM->m_pSteamCon->setActionSet(sControllerID.GetStringValue(), sActionSetName.GetStringValue());
+
+    S3DX_API_PROFILING_STOP( ) ;
+    return 0;
+}
+
+//-----------------------------------------------------------------------------
+
+int Callback_Steamworks_sconGetActionSet ( int _iInCount, const S3DX::AIVariable *_pIn, S3DX::AIVariable *_pOut )
+{
+    S3DX_API_PROFILING_START( "Steamworks.sconGetActionSet" ) ;
+
+    // Input Parameters 
+    int iInputCount = 0 ;
+    S3DX::AIVariable sControllerID = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+
+    // Output Parameters 
+    S3DX::AIVariable sActionSetName ;
+
+	sActionSetName.SetStringValue(SM->m_pSteamCon->getActionSet(sControllerID.GetStringValue()));
+
+    // Return output Parameters 
+    int iReturnCount = 0 ;
+    _pOut[iReturnCount++] = sActionSetName ;
+
+    S3DX_API_PROFILING_STOP( ) ;
+    return iReturnCount;
+}
+
+//-----------------------------------------------------------------------------
+
+int Callback_Steamworks_sconGetDigitalActionOrigin ( int _iInCount, const S3DX::AIVariable *_pIn, S3DX::AIVariable *_pOut )
+{
+    S3DX_API_PROFILING_START( "Steamworks.sconGetDigitalActionOrigin" ) ;
+
+    // Input Parameters 
+    int iInputCount = 0 ;
+    S3DX::AIVariable sControllerID  = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+    S3DX::AIVariable sActionSetName = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+    S3DX::AIVariable sAction        = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+
+    // Output Parameters 
+    S3DX::AIVariable kOrigin ;
+
+	kOrigin.SetNumberValue( SM->m_pSteamCon->GetConstForControllerOriginAnalog(sControllerID.GetStringValue(), sActionSetName.GetStringValue(), sAction.GetStringValue()) );
+
+    // Return output Parameters 
+    int iReturnCount = 0 ;
+    _pOut[iReturnCount++] = kOrigin ;
+
+    S3DX_API_PROFILING_STOP( ) ;
+    return iReturnCount;
+
+}
+
+//-----------------------------------------------------------------------------
+
+int Callback_Steamworks_sconGetAnalogActionOrigin ( int _iInCount, const S3DX::AIVariable *_pIn, S3DX::AIVariable *_pOut )
+{
+    S3DX_API_PROFILING_START( "Steamworks.sconGetAnalogActionOrigin" ) ;
+
+    // Input Parameters 
+    int iInputCount = 0 ;
+    S3DX::AIVariable sControllerID  = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+    S3DX::AIVariable sActionSetName = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+    S3DX::AIVariable sAction        = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+
+    // Output Parameters 
+    S3DX::AIVariable kOrigin ;
+
+	kOrigin.SetNumberValue( SM->m_pSteamCon->GetConstForControllerOriginAnalog(sControllerID.GetStringValue(), sActionSetName.GetStringValue(), sAction.GetStringValue()) );
+
+    // Return output Parameters 
+    int iReturnCount = 0 ;
+    _pOut[iReturnCount++] = kOrigin ;
+
+    S3DX_API_PROFILING_STOP( ) ;
+    return iReturnCount;
+}
+
+//-----------------------------------------------------------------------------
+
+int Callback_Steamworks_sconLoop ( int _iInCount, const S3DX::AIVariable *_pIn, S3DX::AIVariable *_pOut )
+{
+    S3DX_API_PROFILING_START( "Steamworks.sconLoop" ) ;
+
+	SM->m_pSteamCon->sconLoop();
+
+    S3DX_API_PROFILING_STOP( ) ;
+    return 0;
+}
+
+//-----------------------------------------------------------------------------
+
+int Callback_Steamworks_sconSetAnalogActions ( int _iInCount, const S3DX::AIVariable *_pIn, S3DX::AIVariable *_pOut )
+{
+    S3DX_API_PROFILING_START( "Steamworks.sconSetAnalogActions" ) ;
+
+    // Input Parameters 
+    int iInputCount = 0 ;
+    S3DX::AIVariable sActionCSV = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+
+    // Output Parameters 
+    S3DX::AIVariable bOK ;
+
+	std::string sAA = sActionCSV.GetStringValue();
+	if (!sAA.empty()) {
+		bOK.SetBooleanValue(SM->m_pSteamCon->fillAnalogActions(sAA));
+	}
+	else {
+		bOK.SetBooleanValue(false);
+	}
+
+
+    // Return output Parameters 
+    int iReturnCount = 0 ;
+    _pOut[iReturnCount++] = bOK ;
+
+    S3DX_API_PROFILING_STOP( ) ;
+    return iReturnCount;
+}
+
+//-----------------------------------------------------------------------------
+
+int Callback_Steamworks_sconSetDigitalActions ( int _iInCount, const S3DX::AIVariable *_pIn, S3DX::AIVariable *_pOut )
+{
+    S3DX_API_PROFILING_START( "Steamworks.sconSetDigitalActions" ) ;
+
+    // Input Parameters 
+    int iInputCount = 0 ;
+    S3DX::AIVariable sActionCSV = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+
+    // Output Parameters 
+    S3DX::AIVariable bOK ;
+
+	std::string sDA = sActionCSV.GetStringValue();
+	if (!sDA.empty()) {
+		bOK.SetBooleanValue(SM->m_pSteamCon->fillDigitalActions(sDA));
+	} else {
+		bOK.SetBooleanValue(false);
+	}
+
+    // Return output Parameters 
+    int iReturnCount = 0 ;
+    _pOut[iReturnCount++] = bOK ;
+
+    S3DX_API_PROFILING_STOP( ) ;
+    return iReturnCount;
+}
+
+//-----------------------------------------------------------------------------
+
+int Callback_Steamworks_sconSetActionSets ( int _iInCount, const S3DX::AIVariable *_pIn, S3DX::AIVariable *_pOut )
+{
+    S3DX_API_PROFILING_START( "Steamworks.sconSetActionSets" ) ;
+
+    // Input Parameters 
+    int iInputCount = 0 ;
+    S3DX::AIVariable sActionCSV = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+
+    // Output Parameters 
+    S3DX::AIVariable bOK ;
+
+	std::string sAS = sActionCSV.GetStringValue();
+	if (!sAS.empty()) {
+		bOK.SetBooleanValue(SM->m_pSteamCon->fillActionSets(sAS));
+	}
+	else {
+		bOK.SetBooleanValue(false);
+	}
+
+
+    // Return output Parameters 
+    int iReturnCount = 0 ;
+    _pOut[iReturnCount++] = bOK ;
+
+    S3DX_API_PROFILING_STOP( ) ;
+    return iReturnCount;
+}
+
+//-----------------------------------------------------------------------------
+
+int Callback_Steamworks_sconGetConnectedControllers ( int _iInCount, const S3DX::AIVariable *_pIn, S3DX::AIVariable *_pOut )
+{
+    S3DX_API_PROFILING_START( "Steamworks.sconGetConnectedControllers" ) ;
+
+    // Output Parameters 
+    S3DX::AIVariable nConnected ;
+	nConnected.SetNumberValue( SM->m_pSteamCon->getConnectedControllers());
+
+    // Return output Parameters 
+    int iReturnCount = 0 ;
+    _pOut[iReturnCount++] = nConnected ;
+
+    S3DX_API_PROFILING_STOP( ) ;
+    return iReturnCount;
+}
+
+//-----------------------------------------------------------------------------
+
+int Callback_Steamworks_IsDlcInstalled ( int _iInCount, const S3DX::AIVariable *_pIn, S3DX::AIVariable *_pOut )
+{
+    S3DX_API_PROFILING_START( "Steamworks.IsDlcInstalled" ) ;
+
+    // Input Parameters 
+    int iInputCount = 0 ;
+    S3DX::AIVariable sAppId = ( iInputCount < _iInCount ) ? _pIn[iInputCount++] : S3DX::AIVariable ( ) ;
+	
+    // Output Parameters 
+    S3DX::AIVariable bInstalled ;
+	
+	const char* appId = sAppId.GetStringValue();
+	bInstalled = SM->m_pDlc->IsDLCInstalled(appId);
+
+    // Return output Parameters 
+    int iReturnCount = 0 ;
+    _pOut[iReturnCount++] = bInstalled ;
+
+    S3DX_API_PROFILING_STOP( ) ;
+    return iReturnCount;
+}
+
 //-----------------------------------------------------------------------------
 
 int Callback_Steamworks_GetServerTime ( int _iInCount, const S3DX::AIVariable *_pIn, S3DX::AIVariable *_pOut )
@@ -937,6 +1219,70 @@ int Callback_Steamworks_RunCallbacks ( int _iInCount, const S3DX::AIVariable *_p
 SteamworksPackage::SteamworksPackage ( )
 {
 #ifdef S3DX_DLL
+    Steamworks.pfn_Steamworks_sconPulse                          = Callback_Steamworks_sconPulse                          ;
+    Steamworks.kSconLeftPad                          = 0 ; 
+    Steamworks.kSconRightPad                         = 1 ; 
+    Steamworks.pfn_Steamworks_sconShowBindingPanel               = Callback_Steamworks_sconShowBindingPanel               ;
+    Steamworks.pfn_Steamworks_sconSetActionSet                   = Callback_Steamworks_sconSetActionSet                   ;
+    Steamworks.pfn_Steamworks_sconGetActionSet                   = Callback_Steamworks_sconGetActionSet                   ;
+    Steamworks.kSconAnalogSourceModeNone             = 0 ; 
+    Steamworks.kSconAnalogSourceModeDpad             = 1 ; 
+    Steamworks.kSconAnalogSourceModeButtons          = 2 ; 
+    Steamworks.kSconAnalogSourceModeFourButtons      = 3 ; 
+    Steamworks.kSconAnalogSourceModeAbsoluteMouse    = 4 ; 
+    Steamworks.kSconAnalogSourceModeRelativeMouse    = 5 ; 
+    Steamworks.kSconAnalogSourceModeJoystickMove     = 6 ; 
+    Steamworks.kSconAnalogSourceModeJoystickCamera   = 7 ; 
+    Steamworks.kSconAnalogSourceModeScrollWheel      = 8 ; 
+    Steamworks.kSconAnalogSourceModeTrigger          = 9 ; 
+    Steamworks.kSconAnalogSourceModeTouchMenu        = 10 ; 
+    Steamworks.kSconButtonNone                       = 0 ; 
+    Steamworks.kSconButtonA                          = 1 ; 
+    Steamworks.kSconButtonB                          = 2 ; 
+    Steamworks.kSconButtonX                          = 3 ; 
+    Steamworks.kSconButtonY                          = 4 ; 
+    Steamworks.kSconBumperLeft                       = 5 ; 
+    Steamworks.kSconBumperRight                      = 6 ; 
+    Steamworks.kSconGripLeft                         = 7 ; 
+    Steamworks.kSconGripRight                        = 8 ; 
+    Steamworks.kSconButtonStart                      = 9 ; 
+    Steamworks.kSconButtonBack                       = 10 ; 
+    Steamworks.kSconPadLeftTouch                     = 11 ; 
+    Steamworks.kSconPadLeftSwipe                     = 12 ; 
+    Steamworks.kSconPadLeftClick                     = 13 ; 
+    Steamworks.kSconPadLeftDPadUp                    = 14 ; 
+    Steamworks.kSconPadLeftDPadDown                  = 15 ; 
+    Steamworks.kSconPadLeftDPadLeft                  = 16 ; 
+    Steamworks.kSconPadLeftDPadRight                 = 17 ; 
+    Steamworks.kSconPadRightTouch                    = 18 ; 
+    Steamworks.kSconPadRightSwipe                    = 19 ; 
+    Steamworks.kSconPadRightClick                    = 20 ; 
+    Steamworks.kSconPadRightDPadUp                   = 21 ; 
+    Steamworks.kSconPadRightDPadDown                 = 22 ; 
+    Steamworks.kSconPadRightDPadLeft                 = 23 ; 
+    Steamworks.kSconPadRightDPadRight                = 24 ; 
+    Steamworks.kSconTriggerLeftPull                  = 25 ; 
+    Steamworks.kSconTriggerLeftClick                 = 26 ; 
+    Steamworks.kSconTriggerRightPull                 = 27 ; 
+    Steamworks.kSconTriggerRightClick                = 28 ; 
+    Steamworks.kSconStickLeftMove                    = 29 ; 
+    Steamworks.kSconStickLeftClick                   = 30 ; 
+    Steamworks.kSconStickLeftUp                      = 31 ; 
+    Steamworks.kSconStickLeftDown                    = 32 ; 
+    Steamworks.kSconStickLeftLeft                    = 33 ; 
+    Steamworks.kSconStickLeftRight                   = 34 ; 
+    Steamworks.kSconGyroMove                         = 35 ; 
+    Steamworks.kSconGyroPitch                        = 36 ; 
+    Steamworks.kSconGyroYaw                          = 37 ; 
+    Steamworks.kSconGyroRoll                         = 38 ; 
+    Steamworks.pfn_Steamworks_sconGetDigitalActionOrigin         = Callback_Steamworks_sconGetDigitalActionOrigin         ;
+    Steamworks.pfn_Steamworks_sconGetAnalogActionOrigin          = Callback_Steamworks_sconGetAnalogActionOrigin          ;
+    Steamworks.pfn_Steamworks_sconLoop                           = Callback_Steamworks_sconLoop                           ;
+    Steamworks.pfn_Steamworks_sconSetAnalogActions               = Callback_Steamworks_sconSetAnalogActions               ;
+    Steamworks.pfn_Steamworks_sconSetDigitalActions              = Callback_Steamworks_sconSetDigitalActions              ;
+    Steamworks.pfn_Steamworks_sconSetActionSets                  = Callback_Steamworks_sconSetActionSets                  ;
+    Steamworks.pfn_Steamworks_sconGetConnectedControllers        = Callback_Steamworks_sconGetConnectedControllers        ;
+	Steamworks.pfn_Steamworks_IsDlcInstalled                     = Callback_Steamworks_IsDlcInstalled                     ;
     Steamworks.pfn_Steamworks_GetServerTime                      = Callback_Steamworks_GetServerTime                      ;
     Steamworks.pfn_Steamworks_SubmitOrCreateScore                = Callback_Steamworks_SubmitOrCreateScore                ;
     Steamworks.pfn_Steamworks_OpenItemInBrowser                  = Callback_Steamworks_OpenItemInBrowser                  ;
@@ -1017,7 +1363,19 @@ SteamworksPackage::~SteamworksPackage ( )
 
 static S3DX::AIFunction aMyFunctions [ ] =
 {
-    { "GetServerTime"                     , Callback_Steamworks_GetServerTime                     , "nDay, nMonth, nYear, nHour, nMinute, nSecond"                                         , ""                                                                           , "Steam server time - in PST, number of seconds since January 1, 1970 (i.e unix time)"                                                                                                                                                                                                                                 , 0 }, 
+    { "sconPulse"                         , Callback_Steamworks_sconPulse                         , ""                                              , "sControllerID, SteamworkskPad, nDurationMicroSecs"                          , "Trigger haptic feedback on a touchpad"                                                                                                                                                                                                                                                                               , 0 }, 
+    { "sconShowBindingPanel"              , Callback_Steamworks_sconShowBindingPanel              , "bOK"                                           , "sControntrollerID"                                                          , "show SCon Config panel"                                                                                                                                                                                                                                                                                              , 0 }, 
+    { "sconSetActionSet"                  , Callback_Steamworks_sconSetActionSet                  , ""                                              , "sControllerID, sActionSetName"                                              , "activates an action set for a controller"                                                                                                                                                                                                                                                                            , 0 }, 
+    { "sconGetActionSet"                  , Callback_Steamworks_sconGetActionSet                  , "sActionSetName"                                , "sControllerID"                                                              , "returns the current action set for a controller"                                                                                                                                                                                                                                                                     , 0 }, 
+    { "sconGetDigitalActionOrigin"        , Callback_Steamworks_sconGetDigitalActionOrigin        , "kOrigin"                                       , "sControllerID, sActionSetName, sAction"                                     , "resolves action to controller button"                                                                                                                                                                                                                                                                                , 0 }, 
+    { "sconGetAnalogActionOrigin"         , Callback_Steamworks_sconGetAnalogActionOrigin         , "kOrigin"                                       , "sControllerID, sActionSetName, sAction"                                     , "resolves action to controller analog control"                                                                                                                                                                                                                                                                        , 0 }, 
+    { "sconLoop"                          , Callback_Steamworks_sconLoop                          , ""                                              , ""                                                                           , "internal loop for the Steam Controller"                                                                                                                                                                                                                                                                              , 0 }, 
+    { "sconSetAnalogActions"              , Callback_Steamworks_sconSetAnalogActions              , "bOK"                                           , "sActionCSV"                                                                 , "tell plugin all possible analog actions as CSV"                                                                                                                                                                                                                                                                      , 0 }, 
+    { "sconSetDigitalActions"             , Callback_Steamworks_sconSetDigitalActions             , "bOK"                                           , "sActionCSV"                                                                 , "tell plugin all possible digital actions as CSV"                                                                                                                                                                                                                                                                     , 0 }, 
+    { "sconSetActionSets"                 , Callback_Steamworks_sconSetActionSets                 , "bOK"                                           , "sActionCSV"                                                                 , "tell plugin all possible actionsets as CSV"                                                                                                                                                                                                                                                                          , 0 }, 
+    { "sconGetConnectedControllers"       , Callback_Steamworks_sconGetConnectedControllers       , "nConnected"                                    , ""                                                                           , "returns the # of currently connected controllers"                                                                                                                                                                                                                                                                    , 0 }, 
+    { "IsDlcInstalled"                    , Callback_Steamworks_IsDlcInstalled                    , "bInstalled"                                    , "sAppId"                                                                     , "Returns true if Dlc installed."                                                                                                                                                                                                                                                                                      , 0 }, 
+	{ "GetServerTime"                     , Callback_Steamworks_GetServerTime                     , "nDay, nMonth, nYear, nHour, nMinute, nSecond"                                         , ""                                                                           , "Steam server time - in PST, number of seconds since January 1, 1970 (i.e unix time)"                                                                                                                                                                                                                                 , 0 }, 
     { "SubmitOrCreateScore"               , Callback_Steamworks_SubmitOrCreateScore               , ""                                              , "sLeaderboard, nScore"                                                       , "Submits a new score, creating the leaderboard if it doesn't exist."                                                                                                                                                                                                                                                  , 0 }, 
     { "OpenItemInBrowser"                 , Callback_Steamworks_OpenItemInBrowser                 , ""                                              , "sWorkshopItemID"                                                            , "Opens a workshop item in the steam overlay."                                                                                                                                                                                                                                                                         , 0 }, 
     { "MakeDir"                           , Callback_Steamworks_MakeDir                           , ""                                              , "sFullPath"                                                                  , "Makes the specified directory if it doesn't exist."                                                                                                                                                                                                                                                                  , 0 }, 
@@ -1064,6 +1422,58 @@ static S3DX::AIFunction aMyFunctions [ ] =
 
 static S3DX::AIConstant aMyConstants [ ] =
 {
+    { "kSconLeftPad"                         , 0 , "Steam Controller left pad"                                                                           , 0 }, 
+    { "kSconRightPad"                        , 1 , "Steam Controller right pad"                                                                          , 0 }, 
+    { "kSconAnalogSourceModeNone"            , 0 , "Steam Controller Analog Control mode switch"                                                         , 0 }, 
+    { "kSconAnalogSourceModeDpad"            , 1 , "Steam Controller Analog Control mode switch"                                                         , 0 }, 
+    { "kSconAnalogSourceModeButtons"         , 2 , "Steam Controller Analog Control mode switch"                                                         , 0 }, 
+    { "kSconAnalogSourceModeFourButtons"     , 3 , "Steam Controller Analog Control mode switch"                                                         , 0 }, 
+    { "kSconAnalogSourceModeAbsoluteMouse"   , 4 , "Steam Controller Analog Control mode switch"                                                         , 0 }, 
+    { "kSconAnalogSourceModeRelativeMouse"   , 5 , "Steam Controller Analog Control mode switch"                                                         , 0 }, 
+    { "kSconAnalogSourceModeJoystickMove"    , 6 , "Steam Controller Analog Control mode switch"                                                         , 0 }, 
+    { "kSconAnalogSourceModeJoystickCamera"  , 7 , "Steam Controller Analog Control mode switch"                                                         , 0 }, 
+    { "kSconAnalogSourceModeScrollWheel"     , 8 , "Steam Controller Analog Control mode switch"                                                         , 0 }, 
+    { "kSconAnalogSourceModeTrigger"         , 9 , "Steam Controller Analog Control mode switch"                                                         , 0 }, 
+    { "kSconAnalogSourceModeTouchMenu"       , 10, "Steam Controller Analog Control mode switch"                                                         , 0 }, 
+    { "kSconButtonNone"                      , 0 , "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconButtonA"                         , 1 , "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconButtonB"                         , 2 , "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconButtonX"                         , 3 , "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconButtonY"                         , 4 , "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconBumperLeft"                      , 5 , "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconBumperRight"                     , 6 , "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconGripLeft"                        , 7 , "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconGripRight"                       , 8 , "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconButtonStart"                     , 9 , "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconButtonBack"                      , 10, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconPadLeftTouch"                    , 11, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconPadLeftSwipe"                    , 12, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconPadLeftClick"                    , 13, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconPadLeftDPadUp"                   , 14, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconPadLeftDPadDown"                 , 15, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconPadLeftDPadLeft"                 , 16, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconPadLeftDPadRight"                , 17, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconPadRightTouch"                   , 18, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconPadRightSwipe"                   , 19, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconPadRightClick"                   , 20, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconPadRightDPadUp"                  , 21, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconPadRightDPadDown"                , 22, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconPadRightDPadLeft"                , 23, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconPadRightDPadRight"               , 24, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconTriggerLeftPull"                 , 25, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconTriggerLeftClick"                , 26, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconTriggerRightPull"                , 27, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconTriggerRightClick"               , 28, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconStickLeftMove"                   , 29, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconStickLeftClick"                  , 30, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconStickLeftUp"                     , 31, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconStickLeftDown"                   , 32, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconStickLeftLeft"                   , 33, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconStickLeftRight"                  , 34, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconGyroMove"                        , 35, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconGyroPitch"                       , 36, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconGyroYaw"                         , 37, "Steam Controller Button/Input constant"                                                              , 0 }, 
+    { "kSconGyroRoll"                        , 38, "Steam Controller Button/Input constant"                                                              , 0 }, 
     { "kLeaderboardRequestGlobal"            , 0, "Global scores"                                                                                       , 0 }, 
     { "kLeaderboardRequestGlobalAroundUser"  , 1, "Global scores around the user (used with min/max)"                                                   , 0 }, 
     { "kLeaderboardRequestFriends"           , 2, "Scores of friends only"                                                                              , 0 }, 
