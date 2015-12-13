@@ -186,7 +186,7 @@ Steamworks.kSconAnalogSourceModeJoystickMove
 - sconGetDigitalActionOrigin -- returns the kOrigin constant of a given digital action
 - sconGetActionSet -- returns the current action set name for a given controller
 - sconShowBindingPanel -- accesses the binding config panel for a given controller, only works in Big Picture Mode
-- Steamworks.sconPulse -- sends a haptic feedback pulse to a given controller pad. Durations under 200 are barely noticable, durations over 800 do not seem to make the effect any more pronounced. Try 500, like so:
+- sconPulse -- sends a haptic feedback pulse to a given controller pad. Durations under 200 are barely noticable, durations over 800 do not seem to make the effect any more pronounced. Try 500, like so:
 ```
 Steamworks.sconPulse( table.getFirst ( this.tSconIDs ( ) ), Steamworks.kSconRightPad, 500 )
 ```	
